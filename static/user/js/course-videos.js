@@ -14,7 +14,7 @@ window.addEventListener('load', getServicesData);
 
 async function getServicesData() {
     try {
-        let response = await requestAPI(`/api/course/${id}`, null, {}, 'GET');
+        let response = await requestAPI(`${CONTENT_API_URL}api/course/${id}`, null, {}, 'GET');
         let res = await response.json();
         if(response.status == 200) {
             console.log(res)
@@ -50,4 +50,6 @@ function renderServicesData(responseData, type) {
                                 </video>`;
         videos_container.appendChild(video_card)
     });
+    document.querySelector(".title").innerText = responseData.title
 }
+

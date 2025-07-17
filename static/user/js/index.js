@@ -264,8 +264,8 @@ async function dailyUpdateForm(event) {
 // window.addEventListener('load', getServicesData('speaking'));
 // window.addEventListener('load', getServicesData('courses'));
 
-let faqUrl = '/api/faqs?perPage=1000'
-let blogs_endpoint = '/api/blog?perPage=1000&status=published';
+let faqUrl = `${CONTENT_API_URL}api/faqs?perPage=1000`
+let blogs_endpoint = `${CONTENT_API_URL}api/blog?perPage=1000&status=published`;
 window.addEventListener('load', getFaqData(faqUrl));
 window.addEventListener('load', get_blogs(blogs_endpoint));
 
@@ -673,7 +673,7 @@ function shareSite() {
 }
 
 
-let homepage_videos_endpoint = '/api/homepage/videos/active'
+let homepage_videos_endpoint = `${CONTENT_API_URL}api/homepage/videos/active`
 getHomePageVideos();
 // Get and Render Videos
 async function getHomePageVideos() {

@@ -41,6 +41,8 @@
         const shouldShowSubscribeModal = true;
     </script>
     {% endif %}
+
+    {{CONTENT_API_URL|json_script:"CONTENT_API_URL"}}
     {% include "user/modals/subscription-modal.html" %}
     {% include "user/modals/logout.html" %}
     <script src="{% static 'common/js/script.js'%}"></script>

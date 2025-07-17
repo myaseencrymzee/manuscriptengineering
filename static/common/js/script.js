@@ -1,3 +1,5 @@
+const CONTENT_API_URL = JSON.parse(document.getElementById("CONTENT_API_URL").textContent)
+
 const emailRegex = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}/i
 const phoneRegex = /^\+[0-9]{10,}$/;
 const locationRegex = /POINT \((-?\d+\.\d+) (-?\d+\.\d+)\)/;

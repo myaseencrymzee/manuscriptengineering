@@ -9,7 +9,7 @@ window.addEventListener('load', getResourcesData(id));
 
 async function getResourcesData(id) {
     try {
-        let response = await requestAPI(`/api/blog/${id}`, null, {}, 'GET');
+        let response = await requestAPI(`${CONTENT_API_URL}api/blog/${id}`, null, {}, 'GET');
         let res = await response.json();
         if(response.status == 200) {
             renderResourcesData(res)
@@ -50,7 +50,7 @@ function formatDate(dateStr) {
 window.addEventListener('load', getBlogComments(id));
 async function getBlogComments(id) {
     try {
-        let response = await requestAPI(`/api/blogs/${id}/comments`, null, {}, 'GET');
+        let response = await requestAPI(`${CONTENT_API_URL}api/blogs/${id}/comments`, null, {}, 'GET');
         let res = await response.json();
         if(response.status == 200) {
             commentsData = res.data
@@ -71,7 +71,7 @@ function addComments(event) {
     const commentText = commentInput.value.trim();
     if (!commentText) return;
 
-    fetch(`/api/blogs/${id}/comments`, {
+    fetch(`${CONTENT_API_URL}api/blogs/${id}/comments`, {
         method: "POST",
         headers: { "Content-Type": "application/json",
                     'X-CSRFToken': form.querySelector("input[name='csrfmiddlewaretoken']").value
@@ -170,7 +170,7 @@ async function deleteCommentForm(event, commentId) {
             "X-CSRFToken": data.csrfmiddlewaretoken,
         };
         beforeLoad(button);
-        let response = await requestAPI(`/api/blogs/${id}/comments/${commentId}`, null, headers, 'DELETE');
+        let response = await requestAPI(`${CONTENT_API_URL}api/blogs/${id}/comments/${commentId}`, null, headers, 'DELETE');
         if (response.status === 204) {
             afterLoad(button, 'Deleted');
                 button.disabled = true;

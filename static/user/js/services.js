@@ -6,7 +6,7 @@ window.addEventListener('load', getServicesData(type));
 
 async function getServicesData(type) {
     try {
-        let response = await requestAPI(`/api/${type}?perPage=1000`, null, {}, 'GET');
+        let response = await requestAPI(`${CONTENT_API_URL}api/${type}?perPage=1000`, null, {}, 'GET');
         let res = await response.json();
         if(response.status == 200) {
             renderServicesData(res)

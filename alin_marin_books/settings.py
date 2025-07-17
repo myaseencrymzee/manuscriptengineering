@@ -93,6 +93,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'alin_marin_books.context_processors.get_tags',
                 'alin_marin_books.context_processors.subscribed_topics',
+                'alin_marin_books.context_processors.content_api_url'
             ],
         },
     },
@@ -234,6 +235,7 @@ MAX_VIDEO_UPLOAD_SIZE = 104857600  # 100MB in bytes
 # For file upload handling
 FILE_UPLOAD_MAX_MEMORY_SIZE = MAX_VIDEO_UPLOAD_SIZE
 DATA_UPLOAD_MAX_MEMORY_SIZE = MAX_VIDEO_UPLOAD_SIZE
+CONTENT_API_URL=os.environ.get("CONTENT_API_URL")
 
 
 

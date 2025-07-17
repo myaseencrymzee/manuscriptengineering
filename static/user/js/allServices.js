@@ -93,7 +93,7 @@ window.addEventListener('load', getServicesData('course'));
 
 async function getServicesData(type) {
     try {
-        let response = await requestAPI(`/api/${type}`, null, {}, 'GET');
+        let response = await requestAPI(`${CONTENT_API_URL}api/${type}`, null, {}, 'GET');
         let res = await response.json();
         if(response.status == 200) {
             renderServicesData(res, type)
@@ -198,7 +198,7 @@ function updateNavButtons() {
 }
 
 
-let manuscripting_endpoint = '/api/manuscript?perPage=1';
+let manuscripting_endpoint = `${CONTENT_API_URL}api/manuscript?perPage=1`;
 
 
 async function get_manuscripts(endpoint){

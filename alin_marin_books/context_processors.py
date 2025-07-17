@@ -1,3 +1,4 @@
+from alin_marin_books import settings
 from api.tags.models import Tag
 from api.subscribers.models import Subscriber
 
@@ -16,3 +17,6 @@ def subscribed_topics(request):
             "subscribed_topics": list(Subscriber.objects.filter(user=request.user).values_list("topic", flat=True))
         }
     return {"subscribed_topics": []}
+
+def content_api_url(request):
+    return{'CONTENT_API_URL': settings.CONTENT_API_URL}

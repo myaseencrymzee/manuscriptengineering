@@ -12,7 +12,7 @@ window.addEventListener("resize", ()=> {
   adjustBlogContainerHeights();
 })
 
-let blogs_endpoint = '/api/blog?perPage=1000&status=published';
+let blogs_endpoint = `${CONTENT_API_URL}api/blog?perPage=1000&status=published`;
 
 async function get_blogs(endpoint){
     try {

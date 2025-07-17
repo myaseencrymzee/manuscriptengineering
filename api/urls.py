@@ -41,7 +41,8 @@ urlpatterns = [
     path('user/profile/', UserProfileUpdateAPIView.as_view(), name="user-profile-update"),
     path('contact/', ContactFormView.as_view(), name='contact-form'),
     path("book-session/", BookingView.as_view(), name="book-session"),
-    path('subscribe/<int:id>/', SubscribeUserView.as_view(), name='subscribe_user'),
+    path('subscribe/', SubscribeUserView.as_view(), name='subscribe_user'),
+    path('subscribe/<int:id>/', SubscribeUserView.as_view(), name='unsubscribe_user'),
     path('subscribers-list/', SubscriberListView.as_view(), name='subscribers-list'),
     path('signup/', SignupView.as_view(), name='signup'),
 
