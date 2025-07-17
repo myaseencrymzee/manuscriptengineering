@@ -1,0 +1,37 @@
+.logout-modal .modal-header {
+    align-items: unset;
+    border-bottom: unset;
+    padding-bottom: unset !important;
+}
+
+.logout-modal .modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+}
+
+.logout-modal .modal-body span {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21.09px;
+    text-align: center;
+    color: #333333;
+
+}
+
+.logout-modal .modal-body button {
+    width: 300px;
+    height: 45px;
+    background: #FF0D0D;
+    border: none;
+    color: #FFFFFF;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.logout-modal .modal-body button span {
+    color: #FFFFFF;
+}

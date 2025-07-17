@@ -1,0 +1,588 @@
+.services-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* padding: 30px 0px; */
+    gap: 15px;
+    background-color: #ffffff;
+    flex: 1;
+}
+
+.services-container span {
+    font-size: 16px;
+    font-weight: 600;
+    color: #00274D;
+}
+
+.services-container h2 {
+    /* font-size: 30px;
+    font-weight: 600;
+    color: #00274D; */
+    text-align: center;
+    max-width: 820px;
+}
+
+.question-button {
+    background-color: #ffffff;
+    display: flex;
+    display: flex;
+    border: 1px solid #E7E7E7;
+    border-radius: 7px;
+    padding: 4px 6px;
+    /* margin-bottom: 15px; */
+}
+
+.question-button input[type="radio"] {
+    display: none;
+}
+
+.question-button input[type="radio"]:checked+label>span {
+    color: #ffffff;
+}
+
+
+.question-button label span {
+    display: inline-block;
+    /* background-color: #ddd; */
+    padding: 4px 11px;
+    font-family: Arial;
+    font-size: 14px;
+    cursor: pointer;
+    width: 180px;
+    height: 32px;
+    display: flex;
+    font-weight: 500;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+.question-button input[type="radio"]:checked+label>span {
+    background-color: #00274D;
+    border-radius: 7px;
+    /* border: 2px solid #7C00F4; */
+}
+
+
+.services-buttons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.services-buttons > button{
+    border: none;
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+    padding: 4px 15px;
+    border-radius: 7px;
+}
+
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    background-color: #f1f1f1;
+    margin-right: 5px;
+}
+
+.tab.active {
+    background-color: #007BFF;
+    color: white;
+}
+
+.tab-content {
+    display: none !important;
+}
+
+.tab-content.active {
+    display: inherit !important;
+}
+
+
+.coaching-services-container {
+    width: 100%;
+    display: grid;
+    padding: 0;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 0fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+.coaching-services-container .coaching-services {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 15px 0px #00274D1F;
+    border-radius: 10px;
+    max-width: 430px;
+}
+
+.coaching-services img {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.coaching-services-container .coaching-services .main-coaching-content {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 5px;
+    height: 100%;
+}
+
+.coaching-services-container .coaching-services .main-coaching-content span {
+    font-size: 14px;
+    font-weight: 400;
+    max-width: 300px;
+    color: #333333;
+    display: inline-block;
+    height: 100%;
+}
+
+.coaching-services-container .coaching-services .main-coaching-content a{
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.coaching-services .main-coaching-content h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: unset;
+    color: #333333;
+}
+
+.book-now-coaching-btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.img-container img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.book-now-coaching-btns button {
+    background-color: #00274D;
+    border-radius: 8px;
+    padding: 5px 20px;
+    color: #FFFFFF;
+    min-width: fit-content;
+    border: none;
+}
+
+.learn-more-button button {
+    margin-top: 15px;
+    background-color: #00274D;
+    border-radius: 8px;
+    padding: 5px 60px;
+    color: #FFFFFF;
+}
+
+#content-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#coaching-content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#consulting-content,
+#speaking-content,
+#courses-content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.consulting-container {
+    width: 100%;
+}
+
+.goals-section {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 30px;
+    padding: 40px 18px;
+}
+
+.goals-section .goals-content{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap: 10px;
+}
+
+.goals-content > span:first-of-type {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.goals-content > h2 {
+    font-size: 36px;
+    font-weight: 600;
+    text-align: left;
+    max-width: 600px;
+}
+
+.goals-content > span:last-of-type {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--primary-text-color);
+    line-height: 25px;
+    max-width: 620px;
+}
+
+.goals-cards {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.goals-cards .parant-div {
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+    width: 100%;
+}
+
+.goals-cards > .parant-div > .goal-card{
+    padding: 15px;
+    box-shadow: 0px 0px 15px 0px #00274D1F;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+.goals-cards > .parant-div > .goal-card > svg {
+    width: 50px;
+    height: 50px;
+}
+
+.goals-cards > .parant-div > .goal-card > h5 {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    margin: unset;
+}
+
+.goals-cards > .parant-div > .goal-card > span {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--primary-text-color);
+    text-align: center;
+}
+
+.testimonials {
+    padding: 0px;
+}
+
+.event-booking-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    align-items: center;
+}
+
+.event-bookings {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 20px 40px;
+}
+.alin-img {
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+.alin-img img {
+    width: 600px;
+    height: 600px;
+    border-radius: 20px;
+    object-fit: fill;
+}
+
+.event-booking-content {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap: 15px;
+}
+
+.event-booking-heading h2 {
+    font-size: 36px;
+    font-weight: 600;
+    text-align: left;
+    margin: unset;
+}
+
+.booking-content span {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 22px;
+    color: var(--primary-text-color);
+}
+
+.booking-key-points {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.booking-key-points .key-point {
+    display: flex;
+    gap: 5px;
+}
+.booking-key-points .key-point svg {
+    flex-shrink: 0;
+}
+
+.booking-key-points .key-point span {
+    font-size: 14px;
+    color: var(--primary-text-color);
+    font-weight: 500;
+    line-height: 22px;
+}
+.book-now-button button {
+    width: 180px;
+    border: none;
+    padding: 5px;
+    border-radius: 6px;
+    color: #ffffff;
+    background-color: var(--primary-color);
+}
+
+#manuscript-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#manuscript-content h5 {
+    color: #00274D;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.manuscripting-content  p {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--primary-text-color);
+    line-height: 25px;
+    /* max-width: 620px; */
+}
+
+.manuscript-eng-tab {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.manuscripting-content {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.manuscript-img {
+    width: 50%;
+}
+.manuscript-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: fill;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    .services-container {
+        padding: 30px 0px;
+    }
+
+    .services-container h2 {
+        font-size: 24px;
+    }
+
+    .coaching-services-container {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 0fr));
+    }
+
+    .coaching-services img {
+        height: 150px;
+    }
+
+    .coaching-services-container .coaching-services .main-coaching-content span {
+        font-size: 12px;
+    }
+
+    .coaching-services .main-coaching-content h4 {
+        font-size: 16px;
+    }
+
+    .book-now-coaching-btns button {
+        padding: 5px 10px;
+    }
+
+    .learn-more-button button {
+        padding: 5px 40px;
+    }
+
+    #content-section {
+        padding: 20px 0px;
+    }
+
+    #coaching-content,
+    #consulting-content,
+    #speaking-content,
+    #courses-content {
+        gap: 20px;
+    }
+    #manuscript-content {
+        width: 90%;
+    }
+    .manuscript-eng-tab {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .manuscripting-content p {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .manuscript-img {
+        width: 100%;
+    }
+    .manuscripting-content{
+        width: 100%;
+    }
+
+
+
+    .goals-section {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 15px;
+    }
+
+    .goals-section .goals-content {
+        width: 100%;
+    }
+
+    .goals-content > h2 {
+        font-size: 24px;
+    }
+
+    .goals-content > span:last-of-type {
+        font-size: 14px;
+    }
+
+    .goals-cards {
+        width: 100%;
+    }
+
+    .goals-cards .parant-div {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .goals-cards > .parant-div > .goal-card {
+        padding: 10px;
+    }
+
+    .goals-cards > .parant-div > .goal-card > svg {
+        width: 40px;
+        height: 40px;
+    }
+
+    .goals-cards > .parant-div > .goal-card > h5 {
+        font-size: 14px;
+    }
+
+    .goals-cards > .parant-div > .goal-card > span {
+        font-size: 10px;
+    }
+
+    .event-booking-container {
+        gap: 10px;
+    }
+
+    .event-booking-content {
+        width: 100%;
+    }
+
+    .event-booking-heading h2 {
+        font-size: 24px;
+    }
+    .event-bookings {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .alin-img {
+        width: 100%;
+    } 
+    .alin-img img {
+       width: 100%;
+       height: unset;
+    }
+    .event-booking-content {
+        width: 100%;
+    }
+    .event-booking-heading h2 {
+        font-size: 24px;
+    }
+    .booking-content span {
+        font-size: 12px;
+    }
+    .booking-key-points .key-point span {
+        font-size: 12px;
+    }
+    .event-bookings {
+        padding: 20px 15px;
+    }   
+}
+
+
+@media screen and (max-width: 500px) {
+    .testimonials .reviews-container {
+        transform: translateX(-0.64%) !important;
+    }
+    .manuscript-mobile-view {
+        line-height: 12px;
+        font-size: 10px !important;
+    }
+}

@@ -1,0 +1,230 @@
+.get-in-touch-section {
+    max-width: 1920px;
+    /* margin: 0 auto; */
+    padding-top: 70px !important;
+    padding-bottom: 70px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #FFFFFF;
+}
+.get-in-touch-section > span{
+    text-align: left;
+    width: 75.41%;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.get-in-touch-section .get-in-touch-section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.get-in-touch-section .get-in-touch-section-header h2 {
+    font-size: var(--primary-heading);
+    font-weight: 700;
+    line-height: 62.5px;
+    letter-spacing: 0.03em;
+    text-align: center;
+    max-width: 1171px;
+}
+
+.get-in-touch-section .get-in-touch-section-header span {
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0.06em;
+    text-align: center;
+    max-width: 867px;
+    display: inline-block;
+}
+
+.get-in-touch-section .get-in-touch-wrapper {
+    display: flex;
+    align-items: center;
+    width: 75.41%;
+    justify-content: space-between;
+}
+
+.get-in-touch-section .get-in-touch-wrapper .get-in-touch-info-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+    align-self: flex-start;
+    width: 41%;
+}
+
+.keep-in-touch-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.keep-in-touch-content span:first-of-type {
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.keep-in-touch-content h2 {
+    color: var(--primary-text-color);
+    font-weight: 700;
+    font-size: 32px;
+    margin-bottom: unset;
+}
+
+.keep-in-touch-content span:last-of-type {
+    color: var(--primary-text-color);
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.get-in-touch-section .get-in-touch-wrapper .get-in-touch-info-wrapper .get-in-touch-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.get-in-touch-section .get-in-touch-wrapper .get-in-touch-info-wrapper .get-in-touch-links .get-in-touch-info-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.get-in-touch-section .get-in-touch-wrapper .get-in-touch-info-wrapper .get-in-touch-links .get-in-touch-info-card .card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    border-radius: 12px;
+    background: var(--second-secondary-color);
+    flex-shrink: 0;
+}
+
+.get-in-touch-section .get-in-touch-wrapper .get-in-touch-info-wrapper .get-in-touch-links .get-in-touch-info-card .card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: -0.01em;
+    text-align: left;
+}
+
+.get-in-touch-section .get-in-touch-wrapper .get-in-touch-info-wrapper .get-in-touch-links .get-in-touch-info-card .card-info a span:last-of-type {
+    font-weight: 400;
+    color: #333333;
+    word-break: break-all;
+}
+
+.get-in-touch-section .get-in-touch-wrapper .get-in-touch-info-wrapper .get-in-touch-links .get-in-touch-info-card .card-info span:first-of-type {
+    font-weight: 700;
+    color: #333333;
+}
+
+.get-in-touch-section .get-in-touch-contact-wrapper {
+    width: 53.3%;
+}
+
+.get-in-touch-section .get-in-touch-contact-wrapper .contact-input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.get-in-touch-section .get-in-touch-contact-wrapper .contact-input-container .contact-input-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.get-in-touch-section .get-in-touch-contact-wrapper .contact-input-container .contact-input-row label {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 27px;
+    text-align: left;
+    color: var(--text-field-heading);
+}
+
+.get-in-touch-section .get-in-touch-contact-wrapper .contact-input-container .contact-input-row>div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+    width: 100%;
+}
+
+.get-in-touch-section .get-in-touch-contact-wrapper .contact-input-container .contact-input-row>div>div {
+    display: flex;
+    align-items: center;
+}
+
+.get-in-touch-section .get-in-touch-contact-wrapper .contact-input-container .contact-input-row>div>div input {
+    width: 100%;
+    max-width: 367px;
+    height: 50px;
+    border: 1px solid #E7E7E7;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: 24px;
+    color: var(--primary-text-color);
+}
+
+.get-in-touch-section .get-in-touch-contact-wrapper .contact-input-container .contact-input-row>div>div .unset-maxwidth {
+    max-width: unset !important;
+}
+
+.get-in-touch-section .get-in-touch-contact-wrapper .contact-input-container .contact-input-row>div>div svg {
+    position: absolute;
+    left: 10px;
+    bottom: 12px;
+}
+
+.get-in-touch-section .get-in-touch-contact-wrapper .contact-input-container .contact-input-row textarea {
+    width: 100%;
+    height: 140px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #E7E7E7;
+    resize: none;
+    color: var(--primary-text-color);
+}
+
+.get-in-touch-section .get-in-touch-contact-wrapper .get-in-touch-btn {
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 8px;
+    background: #00274D;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 30px;
+    text-align: center;
+
+    margin-top: 60px;
+}
+
+.get-in-touch-section .get-in-touch-contact-wrapper .get-in-touch-btn>span {
+    color: #FFFFFF;
+}
+
+@media screen and (max-width: 450px) {
+    .get-in-touch-section {
+        padding-top: 20px !important;
+    }
+    .get-in-touch-section > span {
+        font-size: 14px !important;
+    }
+
+    .keep-in-touch-content h2 {
+        font-size: 26px;
+        text-align: center;
+    }
+}

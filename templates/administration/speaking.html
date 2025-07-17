@@ -1,0 +1,21 @@
+{% extends "administration/base.html" %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'administration/css/speaking.css' %}">
+{% endblock css %}
+{% block title %}Speaking{% endblock title %}
+{% block content %}
+
+<div class="main">
+    <div class="coaching-services-container" id="speaking-services-container">        
+
+    </div>
+</div>
+
+
+{% include "administration/modals/servicesmodals.html" %}
+
+{% endblock %}
+{% block js %}
+<script src="{% static "administration/js/speaking.js" %}"></script>
+{% endblock js %}

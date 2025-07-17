@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'common/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'user/include/css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'user/include/css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'user/css/logout.css' %}">
+    <link rel="stylesheet" href="{% static 'user/modals/css/subscription-modal.css' %}">
+    <link rel="shortcut icon" href="{% static 'user/images/logo.svg'%}" type="image/x-icon">
+    {% for name, content in meta_tags.items %}
+        <meta name="{{ name }}" content="{{ content }}">
+    {% endfor %}
+    {% block css %}{% endblock css %}
+    <title> {% block title %}{% endblock title %} | Alin Marin Books</title>
+</head>
+<body>
+    {% include "user/include/navbar.html"%}
+    <div class="main-container">
+        <div class="main-content d-flex flex-column">
+            {% block content %}{% endblock content %}
+            {% include "user/include/footer.html" %}
+            
+        </div>
+    </div>
+    {% if subscribed_topics|length >= 4 or 'all' in subscribed_topics %} 
+    <script>
+        const shouldShowSubscribeModal = false;
+    </script>
+    {% else %}
+    <script>
+        const shouldShowSubscribeModal = true;
+    </script>
+    {% endif %}
+    {% include "user/modals/subscription-modal.html" %}
+    {% include "user/modals/logout.html" %}
+    <script src="{% static 'common/js/script.js'%}"></script>
+    <script src="{% static 'user/include/js/navbar.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    {% block js %}{% endblock js %}
+</body>
+</html>

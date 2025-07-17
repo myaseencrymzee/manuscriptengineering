@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ notification.title }}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        /* Base styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333333;
+            background-color: #f7f7f7;
+        }
+        
+        /* Email container */
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Header */
+        .email-header {
+            background-color: #00274D;
+            padding: 30px 40px;
+            color: white;
+            text-align: center;
+        }
+        
+        .email-header h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 600;
+        }
+        
+        /* Content */
+        .email-content {
+            padding: 40px;
+        }
+        
+        .email-body {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #444444;
+        }
+        
+        /* Footer */
+        .email-footer {
+            padding: 20px 40px;
+            background-color: #f5f5f5;
+            font-size: 13px;
+            color: #666666;
+            text-align: center;
+            border-top: 1px solid #e5e5e5;
+        }
+        
+        .unsubscribe-link {
+            color: #00274D;
+            text-decoration: none;
+        }
+        
+        .unsubscribe-link:hover {
+            text-decoration: underline;
+        }
+        
+        .divider {
+            height: 1px;
+            background-color: #e5e5e5;
+            margin: 25px 0;
+        }
+        
+        /* Responsive adjustments */
+        @media only screen and (max-width: 600px) {
+            .email-header, .email-content, .email-footer {
+                padding: 20px;
+            }
+            
+            .email-header h1 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Header -->
+        <div class="email-header">
+            <h1>{{ notification.title }}</h1>
+        </div>
+        
+        <!-- Content -->
+        <div class="email-content">
+            <div class="email-body">
+                {{ notification.body|safe }}
+            </div>
+            
+            <!-- <div class="divider"></div> -->
+            
+            <!-- <p style="text-align: center; margin-bottom: 30px;">
+                <a href="{{ notification.action_url }}" 
+                   style="background-color: #00274D; color: white; 
+                          padding: 12px 24px; border-radius: 4px; 
+                          text-decoration: none; display: inline-block;">
+                    Take Action
+                </a>
+            </p> -->
+        </div>
+        
+        <!-- Footer -->
+        <div class="email-footer">
+            <p>
+                You're receiving this email because you signed up for our service.
+                <br><br>
+                <a href="{{ unsubscribe_url }}" class="unsubscribe-link">Unsubscribe</a> 
+                <!-- from future emails or 
+                <a href="{{ preferences_url }}" class="unsubscribe-link">manage preferences</a>. -->
+            </p>
+            
+            <!-- <p style="margin-top: 15px; font-size: 12px; color: #999;">
+                &copy; {{ current_year }} Your Company. All rights reserved.
+                <br>
+                123 Business St, City, State 10001
+            </p> -->
+        </div>
+    </div>
+</body>
+</html>

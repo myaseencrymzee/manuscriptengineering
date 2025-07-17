@@ -1,0 +1,25 @@
+{% extends "administration/base.html" %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'administration/css/tag.css' %}">
+{% endblock css %}
+{% block title %}Tags{% endblock title %}
+{% block content %}
+
+<div class="add-tags">
+    <form method="post" id="addTagForm" class="text-input-field">
+        {% csrf_token %}
+        <div class="input-wrapper">
+            <input type="text" name="text" placeholder="Enter you interest..." required>
+            <button type="submit">Add</button>
+        </div>
+    </form>
+    <div class="tags-container">
+
+    </div>
+</div>
+
+{% endblock %}
+{% block js %}
+<script src="{% static "administration/js/tag.js" %}"></script>
+{% endblock js %}

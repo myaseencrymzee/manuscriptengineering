@@ -1,0 +1,79 @@
+{% extends "user/base.html" %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'user/css/book-now.css' %}">
+<script src="https://cdn.jsdelivr.net/npm/libphonenumber-js@1.10.0/bundle/libphonenumber-js.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://www.google.com/recaptcha/api.js?render={{RECAPTCHA_SITE_KEY}}"></script>
+
+{% endblock css %}
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+<div class="book-now-section">
+    <div class="book-now-container">
+        <span>- Book Now -</span>
+        <h2>Schedule a session to explore coaching, consulting, or professional speaking engagements tailored to your goals.</h2>
+        <form class="book-now-form" onsubmit="bookNowForm(event);">
+            {% csrf_token %}
+            <div class="form-inputs">
+                {% if request.user.is_authenticated and request.user.role == 'user' %}
+                <input type="text" value="{{request.user.full_name}}" placeholder="First Name" name="full_name" readonly>
+                {% else %}
+                <input type="text" placeholder="First Name" name="full_name" >
+                {% endif %}
+                <!-- <input type="text" placeholder="Last Name" name="last_name" > -->
+                <div class="form-inputs dropdown">
+                    <input type="text" placeholder="Session" class="dropdown-toggle" name="session" data-bs-toggle="dropdown" aria-expanded="false" readonly>
+                    <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L7 7L13 1" stroke="#00274D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg> 
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#" onclick="selectType('coaching', 'Coaching')">Coaching</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="selectType('consulting', 'Consulting')">Consulting</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="selectType('speaking', 'Speaking')">Speaking</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="selectType('other', 'Other')">Other</a></li>
+                    </ul>                   
+                </div>
+            </div>
+            <div class="form-inputs">
+                <input type="text" placeholder="Phone" name="phone_number" >
+                {% if request.user.is_authenticated and request.user.role == 'user' %}
+                <input type="email"  value="{{request.user.email}}" placeholder="Email" name="email" readonly>
+                {% else %}
+                <input type="email" placeholder="Email" name="email" >
+                {% endif %}
+            </div>
+            <div class="form-inputs">
+                <input type="text" placeholder="Address" name="address" >
+                <input type="text"  placeholder="Calendar" name="date_time" id="datetimepicker">
+            </div>
+            
+            <div class="form-inputs">
+                <textarea name="message" placeholder="Message..." id=""></textarea>
+            </div>
+            <div class="form-check {% if subscribed_topics|length == 4 or 'all' in subscribed_topics %} hide {% endif %}" >
+                <input class="form-check-input" type="checkbox" name="keep_me_updated"  id="subscribeCheckbox">
+                <label class="form-check-label" for="subscribeCheckbox">
+                    Keep me up to date with news and offers from time to time by email
+                </label>
+            </div>
+            <div class="">
+                <small class="email-error-msg input-error-msg "></small>
+            </div>
+            <button class="book-now-btn" type="submit">
+                <span class="spinner-border spinner-border-sm hide" role="status" aria-hidden="true"></span>
+                <span class="btn-text">Send Message</span>
+            </button>
+        </form>
+    </div>
+</div>
+{{RECAPTCHA_SITE_KEY|json_script:"RECAPTCHA_SITE_KEY"}}
+{% endblock content %}
+
+{% block js %}
+<script src="{% static 'common/js/script.js' %}"></script>
+<script src="{% static 'user/js/book_now.js' %}"></script>
+{% endblock js %}

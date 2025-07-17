@@ -1,0 +1,22 @@
+{% extends "administration/base.html" %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'administration/css/consulting.css' %}">
+{% endblock css %}
+{% block title %}Consulting{% endblock title %}
+{% block content %}
+
+<div class="main">
+    <div class="coaching-services-container" id="consulting-services-container">
+        <div class="w-100 d-flex justify-content-center">
+            <span class="spinner-border spinner-border-md" role="status" aria-hidden="true"></span>
+        </div>
+    </div>
+</div>
+
+{% include "administration/modals/servicesmodals.html" %}
+
+{% endblock %}
+{% block js %}
+<script src="{% static "administration/js/consulting.js" %}"></script>
+{% endblock js %}

@@ -1,0 +1,332 @@
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    min-height: 100vh;
+    padding: 10px;
+}
+
+main h2{
+    font-weight: 600;
+    font-size: 22px;
+}
+
+
+
+.main-content {
+    padding: 20px;
+    width: 100%;
+    max-width: 657px;
+    border-radius: 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 20px 0px #D0D1D780;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.main-content .back-arrow {
+    position: absolute;
+    left: 20px;
+}
+
+.main-content > .content {
+    width: 342px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* padding-top: 13px; */
+    /* gap: 20px; */
+}
+ .main-content > .content > .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.main-content > .content > .header > h3, .main-content > .content > .header > h4 {
+    margin: unset;
+}
+
+.main-content > .content > .header > h3 {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: center;
+    color: var(--main-heading-color);
+}
+
+.main-content > .content > .header > h4 {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    text-align: center;
+    color: var(--sub-heading-color);
+}
+ .main-content > .content > .body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.logo-svg{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 8px;
+}
+.logo-svg h3{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: unset;
+    color: var(--primary-text-color);
+}
+
+.logo-svg > span{
+    color: var(--primary-text-color);
+}
+.main-content > .content > .body > .input-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.main-content > .content > .body > .input-wrapper > label {
+    color: var(--primary-text-color);
+    font-weight: 500;
+}
+.body > .input-wrapper input{
+    width: 100%;
+    border: 1px solid #E7E7E7;
+    padding: 10px;
+    border-radius: 10px;
+}
+ .main-content > .content > .body > .input-wrapper > div {
+    position: relative;
+}
+
+.main-content > .content > .body > .input-wrapper.forgot-password {
+    align-items: flex-end;
+}
+ .main-content > .content > .body > .input-wrapper > div {
+    position: relative;
+}
+
+.main-content > .content > .body > .input-wrapper > div > svg{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+ .main-content > .content > .body > .input-wrapper  a{
+    color: var(--primary-color) !important;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 21.6px;
+}  
+ .main-content > .content > .footer {
+    border-top: unset;
+    justify-content: center;
+    margin-top: unset;
+    padding: unset;
+    background-color: unset;
+}
+
+.footer .main-footer-content > p {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 21.6px;
+    margin: unset;
+}
+
+.footer .main-footer-content > p a{
+    color: var(--primary-color) !important;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 21.6px;
+}  
+
+.footer .main-footer-content > button {
+  width: 100%;
+  padding: 10px !important;
+  border: none !important;
+  border-radius: 8px !important;
+  color: #ffffff !important;
+  background-color: var(--primary-color) !important;
+}
+.footer .main-footer-content > button .btn-text{
+    color: #ffffff !important;
+}
+
+.footer .main-footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.email-verification {
+    margin-top: 130px !important;
+}
+
+.email-verification span a {
+    color: var(--primary-color) !important;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 21.6px;
+}
+.main-footer-content > div > span {
+    font-size: 14px;
+}
+
+.main-footer-content > div > a {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.footer .separator {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+hr {
+    border: 1px solid #A6A7A8;
+    margin: unset;
+}
+
+.footer .btn.social-btn {
+    background-color: #F5F6F8 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-around !important;
+    border: 1px solid #ffffff !important;
+}
+
+.footer {
+    background-color: #ffffff;
+}
+
+.sso-buttons{
+    display: flex;
+    margin-top: 10px;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.sso-buttons button{
+    padding: 10px 25px;
+    border: 1px solid #DDDFDD;
+    border-radius: 5px;
+}
+
+.modal-footer .main-footer-content > button[type='submit'] > span{
+    color: #ffffff;
+}
+
+.modal-footer .main-footer-content > p a span{
+    color: var(--primary-color) !important;
+}
+
+
+
+
+/* user signup */
+
+.profile-pic-div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-container {
+    position: relative;
+    width: 120px;
+    height: 120px;
+}
+
+.profile-pic {
+    display: block;
+    border-radius: 50%;
+    /* overflow: hidden; */
+    position: relative;
+    cursor: pointer;
+    border: 3px solid #ffcc00;
+}
+
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.upload-icon {
+    position: absolute;
+    bottom: 0px;
+    right: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#profile-upload {
+    display: none;
+}
+
+
+#successModal .modal-content {
+    max-width: 600px !important;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#successModal .modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#successModal .modal-body > h5 {
+    font-weight: 600;
+    font-size: 20px;
+    text-align: center;
+    color: var(--primary-text-color);
+    margin-bottom: unset;
+}
+
+#successModal .modal-body > span {
+    font-weight: 400;
+    font-size: 18px;
+    text-align: center;
+    color: var(--primary-text-color);
+}
+
+
+#successModal .modal-body > button {
+    font-size: 18px;
+    font-weight: 600;
+    width: 300px;
+    height: 40px;
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+}

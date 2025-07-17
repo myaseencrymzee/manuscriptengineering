@@ -1,0 +1,62 @@
+{% extends "administration/base.html" %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'administration/css/manuscript.css' %}">
+{% endblock css %}
+{% block title %}Manuscript Engineering{% endblock title %}
+{% block content %}
+
+
+<div class="manuscription-content">
+    <form class="services-modal" id="manuscriptForm" onsubmit="addManuscriptForm(event)">
+        {% csrf_token %}
+        <!-- Upload Image -->
+         <div class="input-wrappers">
+            <label>Manuscript Image</label>
+            <div class="upload-box" id="image-box">
+                <input type="file" name="image" id="speaking-image-input" accept="image/*" hidden>
+                <svg width="38" height="32" viewBox="0 0 38 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_406_4620)">
+                    <path d="M25.3327 22.4L18.9993 16M18.9993 16L12.666 22.4M18.9993 16V30.4" stroke="#00274D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M32.2835 26.2236C33.8278 25.3728 35.0477 24.0266 35.7508 22.3974C36.4539 20.7682 36.6 18.9488 36.1662 17.2263C35.7323 15.5038 34.7432 13.9764 33.3549 12.8851C31.9666 11.7938 30.2582 11.2008 28.4993 11.1996H26.5043C26.0251 9.32637 25.1318 7.58732 23.8917 6.11317C22.6517 4.63903 21.097 3.46814 19.3446 2.68856C17.5923 1.90897 15.6879 1.54096 13.7745 1.6122C11.8612 1.68343 9.98868 2.19206 8.29786 3.09985C6.60703 4.00763 5.14185 5.29095 4.01248 6.85331C2.8831 8.41568 2.11892 10.2164 1.77738 12.1202C1.43584 14.024 1.52583 15.9812 2.04058 17.8448C2.55534 19.7084 3.48146 21.4298 4.74933 22.8796" stroke="#00274D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M25.3327 22.4L18.9993 16L12.666 22.4" stroke="#00274D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_406_4620">
+                    <rect width="38" height="32" fill="white"/>
+                    </clipPath>
+                    </defs>
+                </svg>                    
+                <span onclick="document.getElementById('speaking-image-input').click()">Upload Image</span>
+                <div id="speaking-image-preview" class="hide image-preview"></div>
+            </div>
+         </div>
+         <div class="input-wrappers">
+            <label>Manuscript Title</label>
+            <input type="text" name="title" id="title" placeholder="Enter title">
+        </div>
+        <!-- Course Description -->
+        <div class="input-wrappers manuscript-description">
+            <label>Manuscript Description</label>
+            <textarea name="description" id="description" placeholder="Description..."></textarea>
+        </div>
+        <div class="error-div text-start w-100">
+            <small class="input-error-msg"></small>
+        </div>
+        <!-- Buttons -->
+        <div class="buttons">
+            <!-- <button type="button" class="cancel" data-bs-dismiss="modal">Cancel</button> -->
+            <button type="submit" class="save">
+                <span class="spinner-border spinner-border-sm hide" role="status" aria-hidden="true"></span>
+                <span class="btn-text text-white">Save</span>
+            </button>
+        </div>
+    </form>
+</div>
+
+
+
+{% endblock %}
+{% block js %}
+<script src="{% static "administration/js/manuscript.js" %}"></script>
+{% endblock js %}

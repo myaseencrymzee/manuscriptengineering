@@ -1,0 +1,110 @@
+.terms-policy-section {
+  padding: 70px 3.64%;
+}
+
+.terms-policy>h1 {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 46px;
+  color: var(--primary-text-color);
+}
+
+.terms-policy>p {
+  font-size: 1rem;
+  line-height: 1.25rem;
+  color: #000000;
+}
+
+.terms-policy p {
+  margin-bottom: 8px;
+  font-size: 18px;
+  line-height: 26px;
+  color: var(--primary-text-color);
+  word-break: break-all;
+}
+
+.terms-policy h2 {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #000000;
+  margin-bottom: 1rem;
+}
+
+ol {
+  list-style-type: none;
+  counter-reset: item;
+  margin: 0;
+  padding: 0;
+}
+
+ol>li {
+  display: table;
+  counter-increment: item;
+  margin-bottom: 1rem;
+}
+
+ol>li:before {
+  content: counters(item, ".") ". ";
+  display: table-cell;
+  padding-right: 0.6em;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+li ol>li {
+  margin: 0;
+  color: var(--primary-text-color);
+}
+
+li ol>li:before {
+  content: counters(item, ".") " ";
+  font-weight: 500;
+  font-size: 16px;
+}
+
+li:not(:has(ol)) p {
+  margin-bottom: 0px !important;
+}
+
+.bottom-page-ad {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottom-page-ad>div {
+  width: 67.3%;
+  max-width: 970px;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #B1B1B1;
+}
+
+
+@media (max-width: 480px) {
+
+  
+
+  .terms-policy-section {
+      padding: 10px;
+  }
+  
+  .terms-policy {
+      padding: 20px 10px;
+  }
+
+  li ol>li {
+      margin: 0;
+      position: relative;
+      left: -25px;
+  }
+
+  li ol li ol li {
+      position: relative;
+      left: -30px;
+  }
+}

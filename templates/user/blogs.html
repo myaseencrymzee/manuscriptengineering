@@ -1,0 +1,72 @@
+{% extends "user/base.html" %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'user/css/home.css' %}">
+{% endblock css %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+
+<section class="resources" id="resources">
+    <div class="w-100 text-center">
+        <p class="section-text p-0 m-0">- Blogs -</p>
+    </div>
+    <div class="w-100 text-center">
+        <h3 class="resources-heading title">Access Exclusive Tools and Insights for Your Growth</h3>
+    </div>
+    <div class="row justify-content-between">
+        <div class="col-12 col-lg-6" id="top-left-blogs-container">
+            <div class="main-blogs">
+                <div class="row justify-content-between" id="top-blogs-container">
+                    
+                </div>
+                <!-- <div class="row justify-content-between pdfs">
+                    <div class="col-12 col-sm-6 gy-3">
+                        <div class="pdf-container">
+                            <div class="overlay">
+                                <span>Stress And Anxiety.Pdf</span>
+                                <button type="button">Download</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 gy-3">
+                        <div class="pdf-container">
+                            <div class="overlay">
+                                <span>Stress And Anxiety.Pdf</span>
+                                <button type="button">Download</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 gy-3">
+                        <div class="pdf-container">
+                            <div class="overlay">
+                                <span>Stress And Anxiety.Pdf</span>
+                                <button type="button">Download</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 gy-3">
+                        <div class="pdf-container">
+                            <div class="overlay">
+                                <span>Stress And Anxiety.Pdf</span>
+                                <button type="button">Download</button>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+        <div class="col-12 col-lg-5 d-none d-lg-block" id="right-blogs-container">
+            <div class="row other-blogs" id="blogs-listing-container">
+
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
+
+{% block js %}
+<script src="{% static 'user/js/blogs.js' %}"></script>
+{% endblock js %}

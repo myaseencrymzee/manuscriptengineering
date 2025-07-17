@@ -1,0 +1,408 @@
+{% extends "user/base.html" %}
+{% load static %}
+{% load custom_tags %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'user/css/resources.css' %}">
+<link rel="stylesheet" href="{% static 'user/modals/css/delete-modal.css' %}">
+
+
+{% endblock css %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+
+<section class="resources-section" id="resources-section">
+     <div class="resources-headline">
+        <span>- Resources -</span>
+     </div>
+     <div class="resources-heading">
+        <h3 id="title">8 Proven Steps to Master Time Management Skills</h3>
+     </div>
+     <div class="resources-main-img">
+        <img loading="lazy" id="resource-img" src="/static/user/images/blog-cover.svg" alt="">
+     </div>
+     <div class="author-information">
+        <div class="author-details">
+            <div class="auther-img">
+                <img loading="lazy" src="/static/user/images/auther-img.jpg" alt="">
+            </div>
+            <div class="author-name">
+                <h6>John Doe</h6>
+                <div class="auther-blog-datetime">
+                    <div class="max-read-time ">
+                        <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_0_6940)">
+                            <path d="M6 1.5C5.0111 1.5 4.0444 1.79324 3.22215 2.34265C2.39991 2.89206 1.75904 3.67295 1.3806 4.58658C1.00217 5.50021 0.90315 6.50555 1.09608 7.47545C1.289 8.44536 1.76521 9.33627 2.46447 10.0355C3.16373 10.7348 4.05465 11.211 5.02455 11.4039C5.99446 11.5969 6.99979 11.4978 7.91342 11.1194C8.82705 10.741 9.60794 10.1001 10.1573 9.27785C10.7068 8.45561 11 7.48891 11 6.5C11 5.84339 10.8707 5.19321 10.6194 4.58658C10.3681 3.97995 9.99983 3.42876 9.53554 2.96447C9.07124 2.50017 8.52005 2.13188 7.91342 1.8806C7.30679 1.62933 6.65661 1.5 6 1.5ZM8 7H6C5.86739 7 5.74022 6.94732 5.64645 6.85355C5.55268 6.75979 5.5 6.63261 5.5 6.5V4.5C5.5 4.36739 5.55268 4.24021 5.64645 4.14645C5.74022 4.05268 5.86739 4 6 4C6.13261 4 6.25979 4.05268 6.35356 4.14645C6.44732 4.24021 6.5 4.36739 6.5 4.5V6H8C8.13261 6 8.25979 6.05268 8.35356 6.14645C8.44732 6.24021 8.5 6.36739 8.5 6.5C8.5 6.63261 8.44732 6.75979 8.35356 6.85355C8.25979 6.94732 8.13261 7 8 7Z" fill="#00274D"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_0_6940">
+                            <rect width="12" height="12" fill="white" transform="translate(0 0.5)"/>
+                            </clipPath>
+                            </defs>
+                        </svg> 
+                        <span id="read_time">3 min. to read</span>                           
+                    </div>
+                    <div class="max-read-time ">
+                        <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 5C1 3.89543 1.89543 3 3 3H9C10.1046 3 11 3.89543 11 5C11 5.27614 10.7761 5.5 10.5 5.5H1.5C1.22386 5.5 1 5.27614 1 5Z" fill="#00274D"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M1 7.5C1 9.38562 1 10.3284 1.58579 10.9142C2.17157 11.5 3.11438 11.5 5 11.5H7C8.88562 11.5 9.82843 11.5 10.4142 10.9142C11 10.3284 11 9.38562 11 7.5C11 7.0286 11 6.79289 10.8536 6.64645C10.7071 6.5 10.4714 6.5 10 6.5H2C1.5286 6.5 1.29289 6.5 1.14645 6.64645C1 6.79289 1 7.0286 1 7.5ZM3.5 8C3.5 7.72386 3.72386 7.5 4 7.5H5C5.27614 7.5 5.5 7.72386 5.5 8C5.5 8.27614 5.27614 8.5 5 8.5H4C3.72386 8.5 3.5 8.27614 3.5 8ZM4 9.5C3.72386 9.5 3.5 9.72386 3.5 10C3.5 10.2761 3.72386 10.5 4 10.5H5C5.27614 10.5 5.5 10.2761 5.5 10C5.5 9.72386 5.27614 9.5 5 9.5H4ZM6.5 8C6.5 7.72386 6.72386 7.5 7 7.5H8C8.27614 7.5 8.5 7.72386 8.5 8C8.5 8.27614 8.27614 8.5 8 8.5H7C6.72386 8.5 6.5 8.27614 6.5 8ZM7 9.5C6.72386 9.5 6.5 9.72386 6.5 10C6.5 10.2761 6.72386 10.5 7 10.5H8C8.27614 10.5 8.5 10.2761 8.5 10C8.5 9.72386 8.27614 9.5 8 9.5H7Z" fill="#00274D"/>
+                            <path d="M3.5 2L3.5 3.5" stroke="#00274D" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M8.5 2L8.5 3.5" stroke="#00274D" stroke-width="2" stroke-linecap="round"/>
+                        </svg>                            
+                        <span id="date">02 december 2022</span>                           
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="auther-social-media-info">
+            <div class="auther-social-media">
+                <a href="https://www.facebook.com/people/Alin-Marin/100063304504031/?rdid=lIVzokkq1FLpGgiO&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F19g5AryidX%2F" target="_blank">
+                    <svg width="25" height="25" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="15" cy="15.5" r="15" fill="white"/>
+                        <path d="M29.9997 15.4072C29.9647 12.5311 29.1134 9.72493 27.5462 7.31925C25.979 4.91357 23.7614 3.00854 21.1543 1.82853C18.5471 0.648517 15.6591 0.242672 12.8304 0.658762C10.0018 1.07487 7.35014 2.29558 5.18788 4.17718C3.02561 6.05876 1.44275 8.52285 0.62569 11.2792C-0.191346 14.0356 -0.208559 16.9695 0.576114 19.7354C1.36079 22.5014 2.91464 24.984 5.0547 26.8911C7.19474 28.7983 9.83187 30.0504 12.6555 30.5V19.803H8.90539V15.4072H12.6555V12.0679C12.5687 11.2915 12.6523 10.5053 12.9005 9.76496C13.1488 9.02459 13.5555 8.34805 14.092 7.78311C14.6284 7.21815 15.2815 6.77855 16.0053 6.49535C16.729 6.21214 17.5059 6.09221 18.2806 6.14405C19.4053 6.15954 20.5273 6.26045 21.637 6.44591V10.2191H19.7619C19.4387 10.1781 19.1102 10.2107 18.8012 10.3145C18.492 10.4183 18.2099 10.5907 17.9759 10.8189C17.7419 11.0471 17.5619 11.3253 17.4492 11.6329C17.3364 11.9406 17.2938 12.2698 17.3244 12.5962V15.4449H21.487L20.812 19.8407H17.3431V30.4057C20.8868 29.8418 24.1122 28.0186 26.4343 25.2668C28.7564 22.515 30.0213 19.017 29.9997 15.4072Z" fill="#00274D"/>
+                    </svg>                        
+                </a>
+                <a href="https://x.com/_Alin_Marin_?s=09" target="_blank">
+                    <svg width="25" height="25" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 30.5C23.2843 30.5 30 23.7843 30 15.5C30 7.21573 23.2843 0.5 15 0.5C6.71573 0.5 0 7.21573 0 15.5C0 23.7843 6.71573 30.5 15 30.5Z" fill="#00274D"/>
+                        <path d="M24.1879 11.279C23.5451 11.564 22.8537 11.7568 22.1285 11.8429C22.8689 11.3993 23.4371 10.6974 23.7053 9.8597C23.0125 10.2707 22.2448 10.5688 21.4285 10.7295C20.7744 10.033 19.8426 9.59766 18.8107 9.59766C16.831 9.59766 15.2253 11.2033 15.2253 13.1831C15.2253 13.4641 15.2571 13.7376 15.3186 14.0002C12.3389 13.8507 9.69678 12.4234 7.92827 10.2536C7.6197 10.783 7.44269 11.3993 7.44269 12.0563C7.44269 13.2999 8.07613 14.3978 9.03766 15.0406C8.45021 15.0222 7.89698 14.8609 7.41381 14.5917C7.41354 14.6069 7.41354 14.6222 7.41354 14.6371C7.41354 16.3744 8.64995 17.8234 10.2898 18.1525C9.9893 18.2349 9.67191 18.2784 9.34543 18.2784C9.11387 18.2784 8.88953 18.2563 8.67081 18.2145C9.12697 19.6387 10.4508 20.6753 12.0201 20.7045C10.7928 21.6663 9.24703 22.2393 7.56676 22.2393C7.27798 22.2393 6.99187 22.2224 6.71191 22.189C8.2978 23.2067 10.1829 23.8 12.2076 23.8C18.8025 23.8 22.409 18.3367 22.409 13.5983C22.409 13.443 22.4055 13.2882 22.3986 13.1347C23.0997 12.6293 23.7074 11.998 24.1879 11.279Z" fill="white"/>
+                    </svg>                        
+                </a>
+                <a href="https://www.instagram.com/itsalinmarin/?utm_source=qr&igsh=cHhndnpxZ2p1ZjN1#" target="_blank">
+                    <svg width="25" height="25" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect y="0.5" width="30" height="30" rx="15" fill="#00274D"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M15 10.5C12.2385 10.5 10 12.7385 10 15.5C10 18.2615 12.2385 20.5 15 20.5C17.7614 20.5 20 18.2615 20 15.5C20 12.7385 17.7614 10.5 15 10.5ZM15 18.7456C13.2075 18.7456 11.7543 17.2925 11.7543 15.5C11.7543 13.7075 13.2075 12.2544 15 12.2544C16.7925 12.2544 18.2456 13.7075 18.2456 15.5C18.2456 17.2925 16.7925 18.7456 15 18.7456Z" fill="white"/>
+                        <path d="M20.4167 11.3333C21.107 11.3333 21.6667 10.7736 21.6667 10.0834C21.6667 9.39304 21.107 8.83333 20.4167 8.83333C19.7263 8.83333 19.1667 9.39304 19.1667 10.0834C19.1667 10.7736 19.7263 11.3333 20.4167 11.3333Z" fill="white"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M15 5.5C12.2842 5.5 11.9436 5.5115 10.877 5.56017C9.81267 5.60875 9.08567 5.77775 8.44958 6.025C7.792 6.2805 7.23433 6.62242 6.67842 7.17842C6.12242 7.73434 5.7805 8.29201 5.525 8.9496C5.27775 9.58568 5.10875 10.3126 5.06017 11.377C5.0115 12.4436 5 12.7842 5 15.5C5 18.2159 5.0115 18.5564 5.06017 19.623C5.10875 20.6874 5.27775 21.4143 5.525 22.0504C5.7805 22.708 6.12242 23.2657 6.67842 23.8217C7.23433 24.3776 7.792 24.7195 8.44958 24.975C9.08567 25.2222 9.81267 25.3912 10.877 25.4398C11.9436 25.4885 12.2842 25.5 15 25.5C17.7158 25.5 18.0564 25.4885 19.123 25.4398C20.1873 25.3912 20.9143 25.2222 21.5504 24.975C22.208 24.7195 22.7657 24.3776 23.3216 23.8217C23.8775 23.2657 24.2195 22.708 24.475 22.0504C24.7222 21.4143 24.8912 20.6874 24.9398 19.623C24.9885 18.5564 25 18.2159 25 15.5C25 12.7842 24.9885 12.4436 24.9398 11.377C24.8912 10.3126 24.7222 9.58568 24.475 8.9496C24.2195 8.29201 23.8775 7.73434 23.3216 7.17842C22.7657 6.62242 22.208 6.2805 21.5504 6.025C20.9143 5.77775 20.1873 5.60875 19.123 5.56017C18.0564 5.5115 17.7158 5.5 15 5.5ZM15 7.30184C17.6701 7.30184 17.9864 7.31201 19.0408 7.36009C20.0158 7.40459 20.5453 7.56751 20.8977 7.70443C21.3645 7.88584 21.6976 8.10251 22.0475 8.45243C22.3975 8.80243 22.6142 9.13552 22.7956 9.60227C22.9325 9.95469 23.0954 10.4842 23.1399 11.4591C23.188 12.5136 23.1982 12.8299 23.1982 15.5C23.1982 18.1701 23.188 18.4864 23.1399 19.5409C23.0954 20.5159 22.9325 21.0453 22.7956 21.3977C22.6142 21.8645 22.3975 22.1977 22.0476 22.5476C21.6976 22.8975 21.3645 23.1142 20.8977 23.2956C20.5453 23.4326 20.0158 23.5954 19.0408 23.6399C17.9866 23.688 17.6703 23.6982 15 23.6982C12.3297 23.6982 12.0135 23.688 10.9592 23.6399C9.98417 23.5954 9.45467 23.4326 9.10225 23.2956C8.6355 23.1142 8.30242 22.8975 7.9525 22.5476C7.60258 22.1977 7.38583 21.8645 7.20442 21.3977C7.0675 21.0453 6.90458 20.5159 6.86008 19.5409C6.812 18.4864 6.80183 18.1701 6.80183 15.5C6.80183 12.8299 6.812 12.5136 6.86008 11.4591C6.90458 10.4842 7.0675 9.95469 7.20442 9.60227C7.38583 9.13552 7.6025 8.80243 7.9525 8.45251C8.30242 8.10251 8.6355 7.88584 9.10225 7.70443C9.45467 7.56751 9.98417 7.40459 10.9592 7.36009C12.0136 7.31201 12.3299 7.30184 15 7.30184Z" fill="white"/>
+                    </svg>                        
+                </a>
+            </div>
+        </div>
+     </div>
+     <div class="author-blog-content" id="author-blog-content">
+       
+     </div>
+     <div class="author-blog-tags hide">
+        <span>Project</span>
+        <span>Management</span>
+        <span>Construction</span>
+     </div>
+     
+
+</section>
+<section class="comment-section">
+    <div class="author-blog-interactions hide">
+        <div class="interactions ">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13.9991 1C15.424 1 15.999 1.95 15.999 3.5C15.949 5.375 15.424 7.225 14.6491 8.925C15.749 9.025 16.8739 9 17.9989 9C19.8737 9 20.9987 9.775 20.9987 11.25C21.0237 11.85 20.6987 12.325 20.2237 12.675L20.2487 12.7C20.6487 13.625 20.6237 14.525 19.7237 15.175L19.7487 15.2C20.1487 16.125 20.1237 17.025 19.2238 17.675L19.2488 17.7C19.5238 18.475 19.4738 18.125 19.5238 18.75C19.5238 20.125 18.5238 21 17.0239 21H13.9991C12.3492 21 10.4494 20.85 8.79947 20.6C8.3745 20.525 7.94953 20.475 7.49956 20.375V20.5C7.49956 20.775 7.27458 21 6.9996 21H1.49997C1.22498 21 1 20.775 1 20.5V8.5C1 8.225 1.22498 8 1.49997 8H6.9996C7.27458 8 7.49956 8.225 7.49956 8.5V8.575C8.59949 7.925 9.39943 6.875 10.1994 5.9C10.3994 5.625 10.5994 5.325 10.7993 4.975C11.0743 4.5 12.0243 2.575 12.2492 2.2C12.7242 1.45 13.2492 1 13.9991 1ZM1.99993 9V20H6.49963V9H1.99993ZM13.9991 2C12.9992 2 12.4992 4.5 10.9993 6.5C10.0744 7.775 8.94946 8.85 7.64955 9.7L7.49956 9.775V19.325C9.62442 19.85 11.8243 19.925 13.9991 20C13.9991 20 15.999 20 16.9989 20C17.9989 20 18.4988 19.5 18.4988 18.75C18.4988 18 17.9989 18 17.9989 17.5C17.9989 17 18.9988 17 18.9988 16.25C18.9988 15.5 18.4988 15.5 18.4988 15C18.4988 14.5 19.4988 14.5 19.4988 13.75C19.4988 13 18.9988 13 18.9988 12.5C18.9988 12 19.9987 12 19.9987 11.25C19.9987 10.5 19.4988 10 17.9989 10C14.4991 10 12.9992 10 13.4992 9C14.0491 7.9 14.9991 5.5 14.9991 3.5C14.9991 2.5 14.7741 2 13.9991 2Z" stroke="#FF0D0D"/>
+            </svg>
+            <span>5.8K</span>                
+        </div>
+        <div class="interactions ">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 11.5C2.99656 12.8199 3.30493 14.1219 3.9 15.3C4.60557 16.7118 5.69025 17.8992 7.03255 18.7293C8.37485 19.5594 9.92176 19.9994 11.5 20C12.8199 20.0035 14.1219 19.6951 15.3 19.1L21 21L19.1 15.3C19.6951 14.1219 20.0034 12.8199 20 11.5C19.9994 9.92179 19.5594 8.37488 18.7293 7.03258C17.8992 5.69028 16.7117 4.6056 15.3 3.90003C14.1219 3.30496 12.8199 2.99659 11.5 3.00003H11C8.91565 3.11502 6.94696 3.99479 5.47086 5.47089C3.99476 6.94699 3.11499 8.91568 3 11V11.5Z" stroke="#FFCC00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>                
+            <span>128</span>                
+        </div>
+     </div>
+     <div class="responses-heading hide">
+        <h5>Responses <span>(128)</span></h5>
+        <button>View All</button>
+     </div>
+     <form class="leave-comments" onsubmit="addComments(event)">
+        {% csrf_token %}
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11.0005 4H4.00049C3.47006 4 2.96135 4.21071 2.58627 4.58579C2.2112 4.96086 2.00049 5.46957 2.00049 6V20C2.00049 20.5304 2.2112 21.0391 2.58627 21.4142C2.96135 21.7893 3.47006 22 4.00049 22H18.0005C18.5309 22 19.0396 21.7893 19.4147 21.4142C19.7898 21.0391 20.0005 20.5304 20.0005 20V13" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M18.5005 2.50023C18.8983 2.1024 19.4379 1.87891 20.0005 1.87891C20.5631 1.87891 21.1027 2.1024 21.5005 2.50023C21.8983 2.89805 22.1218 3.43762 22.1218 4.00023C22.1218 4.56284 21.8983 5.1024 21.5005 5.50023L12.0005 15.0002L8.00049 16.0002L9.00049 12.0002L18.5005 2.50023Z" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>  
+        <input type="text" id="comment-input" placeholder="Leave comment">
+        
+        <button type="submit" {% if request.user.is_authenticated == False %} disabled {% endif %} >Submit</button>          
+    </form>
+     <div class="users-comments-section" id="comments-list">
+        <!-- <div class="users-comments">
+            <div class="author-information">
+                <div class="author-details">
+                    <div class="auther-img">
+                        <img src="/static/user/images/auther-img.jpg" alt="">
+                    </div>
+                    <div class="author-name">
+                        <h6>John Doe</h6>
+                        <div class="auther-blog-datetime">
+                            <div class="max-read-time">
+                                <span>6 days ago</span>                           
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="auther-social-media-info">
+                    <div class="auther-social-media">
+                        <a href="#">
+                            <svg width="16" height="4" viewBox="0 0 16 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2 4C1.45 4 0.979167 3.80417 0.5875 3.4125C0.195833 3.02083 0 2.55 0 2C0 1.45 0.195833 0.979167 0.5875 0.5875C0.979167 0.195833 1.45 0 2 0C2.55 0 3.02083 0.195833 3.4125 0.5875C3.80417 0.979167 4 1.45 4 2C4 2.55 3.80417 3.02083 3.4125 3.4125C3.02083 3.80417 2.55 4 2 4ZM8 4C7.45 4 6.97917 3.80417 6.5875 3.4125C6.19583 3.02083 6 2.55 6 2C6 1.45 6.19583 0.979167 6.5875 0.5875C6.97917 0.195833 7.45 0 8 0C8.55 0 9.02083 0.195833 9.4125 0.5875C9.80417 0.979167 10 1.45 10 2C10 2.55 9.80417 3.02083 9.4125 3.4125C9.02083 3.80417 8.55 4 8 4ZM14 4C13.45 4 12.9792 3.80417 12.5875 3.4125C12.1958 3.02083 12 2.55 12 2C12 1.45 12.1958 0.979167 12.5875 0.5875C12.9792 0.195833 13.45 0 14 0C14.55 0 15.0208 0.195833 15.4125 0.5875C15.8042 0.979167 16 1.45 16 2C16 2.55 15.8042 3.02083 15.4125 3.4125C15.0208 3.80417 14.55 4 14 4Z" fill="#00274D"/>
+                            </svg>                                                       
+                        </a>
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="comment">
+                <span>It's a sad statement about our world that it took me almost to the end of the article to decide this is satire. I spent the first half waffling back and forth between "this is satire', and "this is plausible but doesn't feel right..."</span>
+            </div>
+            <div class="interactions-sections hide">
+                <div class="author-blog-interactions ">
+                    <div class="interactions ">
+                        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.9991 1C15.424 1 15.999 1.95 15.999 3.5C15.949 5.375 15.424 7.225 14.6491 8.925C15.749 9.025 16.8739 9 17.9989 9C19.8737 9 20.9987 9.775 20.9987 11.25C21.0237 11.85 20.6987 12.325 20.2237 12.675L20.2487 12.7C20.6487 13.625 20.6237 14.525 19.7237 15.175L19.7487 15.2C20.1487 16.125 20.1237 17.025 19.2238 17.675L19.2488 17.7C19.5238 18.475 19.4738 18.125 19.5238 18.75C19.5238 20.125 18.5238 21 17.0239 21H13.9991C12.3492 21 10.4494 20.85 8.79947 20.6C8.3745 20.525 7.94953 20.475 7.49956 20.375V20.5C7.49956 20.775 7.27458 21 6.9996 21H1.49997C1.22498 21 1 20.775 1 20.5V8.5C1 8.225 1.22498 8 1.49997 8H6.9996C7.27458 8 7.49956 8.225 7.49956 8.5V8.575C8.59949 7.925 9.39943 6.875 10.1994 5.9C10.3994 5.625 10.5994 5.325 10.7993 4.975C11.0743 4.5 12.0243 2.575 12.2492 2.2C12.7242 1.45 13.2492 1 13.9991 1ZM1.99993 9V20H6.49963V9H1.99993ZM13.9991 2C12.9992 2 12.4992 4.5 10.9993 6.5C10.0744 7.775 8.94946 8.85 7.64955 9.7L7.49956 9.775V19.325C9.62442 19.85 11.8243 19.925 13.9991 20C13.9991 20 15.999 20 16.9989 20C17.9989 20 18.4988 19.5 18.4988 18.75C18.4988 18 17.9989 18 17.9989 17.5C17.9989 17 18.9988 17 18.9988 16.25C18.9988 15.5 18.4988 15.5 18.4988 15C18.4988 14.5 19.4988 14.5 19.4988 13.75C19.4988 13 18.9988 13 18.9988 12.5C18.9988 12 19.9987 12 19.9987 11.25C19.9987 10.5 19.4988 10 17.9989 10C14.4991 10 12.9992 10 13.4992 9C14.0491 7.9 14.9991 5.5 14.9991 3.5C14.9991 2.5 14.7741 2 13.9991 2Z" stroke="#FF0D0D"/>
+                        </svg>
+                        <span>5.8K</span>                
+                    </div>
+                    <div class="interactions ">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 11.5C2.99656 12.8199 3.30493 14.1219 3.9 15.3C4.60557 16.7118 5.69025 17.8992 7.03255 18.7293C8.37485 19.5594 9.92176 19.9994 11.5 20C12.8199 20.0035 14.1219 19.6951 15.3 19.1L21 21L19.1 15.3C19.6951 14.1219 20.0034 12.8199 20 11.5C19.9994 9.92179 19.5594 8.37488 18.7293 7.03258C17.8992 5.69028 16.7117 4.6056 15.3 3.90003C14.1219 3.30496 12.8199 2.99659 11.5 3.00003H11C8.91565 3.11502 6.94696 3.99479 5.47086 5.47089C3.99476 6.94699 3.11499 8.91568 3 11V11.5Z" stroke="#FFCC00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>                
+                        <span>1 reply</span>                
+                    </div>
+                 </div>
+                 <span>Reply</span>
+            </div>
+        </div>
+        <div class="users-comments">
+            <div class="author-information">
+                <div class="author-details">
+                    <div class="auther-img">
+                        <img src="/static/user/images/auther-img.jpg" alt="">
+                    </div>
+                    <div class="author-name">
+                        <h6>John Doe</h6>
+                        <div class="auther-blog-datetime">
+                            <div class="max-read-time">
+                                <span>6 days ago</span>                           
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+                <div class="auther-social-media-info">
+                    <div class="auther-social-media">
+                        <a href="#">
+                            <svg width="16" height="4" viewBox="0 0 16 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2 4C1.45 4 0.979167 3.80417 0.5875 3.4125C0.195833 3.02083 0 2.55 0 2C0 1.45 0.195833 0.979167 0.5875 0.5875C0.979167 0.195833 1.45 0 2 0C2.55 0 3.02083 0.195833 3.4125 0.5875C3.80417 0.979167 4 1.45 4 2C4 2.55 3.80417 3.02083 3.4125 3.4125C3.02083 3.80417 2.55 4 2 4ZM8 4C7.45 4 6.97917 3.80417 6.5875 3.4125C6.19583 3.02083 6 2.55 6 2C6 1.45 6.19583 0.979167 6.5875 0.5875C6.97917 0.195833 7.45 0 8 0C8.55 0 9.02083 0.195833 9.4125 0.5875C9.80417 0.979167 10 1.45 10 2C10 2.55 9.80417 3.02083 9.4125 3.4125C9.02083 3.80417 8.55 4 8 4ZM14 4C13.45 4 12.9792 3.80417 12.5875 3.4125C12.1958 3.02083 12 2.55 12 2C12 1.45 12.1958 0.979167 12.5875 0.5875C12.9792 0.195833 13.45 0 14 0C14.55 0 15.0208 0.195833 15.4125 0.5875C15.8042 0.979167 16 1.45 16 2C16 2.55 15.8042 3.02083 15.4125 3.4125C15.0208 3.80417 14.55 4 14 4Z" fill="#00274D"/>
+                            </svg>                                                       
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="comment">
+                <span>It's a sad statement about our world that it took me almost to the end of the article to decide this is satire. I spent the first half waffling back and forth between "this is satire', and "this is plausible but doesn't feel right..."</span>
+            </div>
+            <div class="interactions-sections hide">
+                <div class="author-blog-interactions ">
+                    <div class="interactions ">
+                        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.9991 1C15.424 1 15.999 1.95 15.999 3.5C15.949 5.375 15.424 7.225 14.6491 8.925C15.749 9.025 16.8739 9 17.9989 9C19.8737 9 20.9987 9.775 20.9987 11.25C21.0237 11.85 20.6987 12.325 20.2237 12.675L20.2487 12.7C20.6487 13.625 20.6237 14.525 19.7237 15.175L19.7487 15.2C20.1487 16.125 20.1237 17.025 19.2238 17.675L19.2488 17.7C19.5238 18.475 19.4738 18.125 19.5238 18.75C19.5238 20.125 18.5238 21 17.0239 21H13.9991C12.3492 21 10.4494 20.85 8.79947 20.6C8.3745 20.525 7.94953 20.475 7.49956 20.375V20.5C7.49956 20.775 7.27458 21 6.9996 21H1.49997C1.22498 21 1 20.775 1 20.5V8.5C1 8.225 1.22498 8 1.49997 8H6.9996C7.27458 8 7.49956 8.225 7.49956 8.5V8.575C8.59949 7.925 9.39943 6.875 10.1994 5.9C10.3994 5.625 10.5994 5.325 10.7993 4.975C11.0743 4.5 12.0243 2.575 12.2492 2.2C12.7242 1.45 13.2492 1 13.9991 1ZM1.99993 9V20H6.49963V9H1.99993ZM13.9991 2C12.9992 2 12.4992 4.5 10.9993 6.5C10.0744 7.775 8.94946 8.85 7.64955 9.7L7.49956 9.775V19.325C9.62442 19.85 11.8243 19.925 13.9991 20C13.9991 20 15.999 20 16.9989 20C17.9989 20 18.4988 19.5 18.4988 18.75C18.4988 18 17.9989 18 17.9989 17.5C17.9989 17 18.9988 17 18.9988 16.25C18.9988 15.5 18.4988 15.5 18.4988 15C18.4988 14.5 19.4988 14.5 19.4988 13.75C19.4988 13 18.9988 13 18.9988 12.5C18.9988 12 19.9987 12 19.9987 11.25C19.9987 10.5 19.4988 10 17.9989 10C14.4991 10 12.9992 10 13.4992 9C14.0491 7.9 14.9991 5.5 14.9991 3.5C14.9991 2.5 14.7741 2 13.9991 2Z" stroke="#FF0D0D"/>
+                        </svg>
+                        <span>5.8K</span>                
+                    </div>
+                    <div class="interactions ">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 11.5C2.99656 12.8199 3.30493 14.1219 3.9 15.3C4.60557 16.7118 5.69025 17.8992 7.03255 18.7293C8.37485 19.5594 9.92176 19.9994 11.5 20C12.8199 20.0035 14.1219 19.6951 15.3 19.1L21 21L19.1 15.3C19.6951 14.1219 20.0034 12.8199 20 11.5C19.9994 9.92179 19.5594 8.37488 18.7293 7.03258C17.8992 5.69028 16.7117 4.6056 15.3 3.90003C14.1219 3.30496 12.8199 2.99659 11.5 3.00003H11C8.91565 3.11502 6.94696 3.99479 5.47086 5.47089C3.99476 6.94699 3.11499 8.91568 3 11V11.5Z" stroke="#FFCC00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>                
+                        <span>1 reply</span>                
+                    </div>
+                 </div>
+                 <span>Reply</span>
+            </div>
+        </div>
+        <div class="users-comments">
+            <div class="author-information">
+                <div class="author-details">
+                    <div class="auther-img">
+                        <img src="/static/user/images/auther-img.jpg" alt="">
+                    </div>
+                    <div class="author-name">
+                        <h6>John Doe</h6>
+                        <div class="auther-blog-datetime">
+                            <div class="max-read-time">
+                                <span>6 days ago</span>                           
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+                <div class="auther-social-media-info">
+                    <div class="auther-social-media">
+                        <a href="#">
+                            <svg width="16" height="4" viewBox="0 0 16 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2 4C1.45 4 0.979167 3.80417 0.5875 3.4125C0.195833 3.02083 0 2.55 0 2C0 1.45 0.195833 0.979167 0.5875 0.5875C0.979167 0.195833 1.45 0 2 0C2.55 0 3.02083 0.195833 3.4125 0.5875C3.80417 0.979167 4 1.45 4 2C4 2.55 3.80417 3.02083 3.4125 3.4125C3.02083 3.80417 2.55 4 2 4ZM8 4C7.45 4 6.97917 3.80417 6.5875 3.4125C6.19583 3.02083 6 2.55 6 2C6 1.45 6.19583 0.979167 6.5875 0.5875C6.97917 0.195833 7.45 0 8 0C8.55 0 9.02083 0.195833 9.4125 0.5875C9.80417 0.979167 10 1.45 10 2C10 2.55 9.80417 3.02083 9.4125 3.4125C9.02083 3.80417 8.55 4 8 4ZM14 4C13.45 4 12.9792 3.80417 12.5875 3.4125C12.1958 3.02083 12 2.55 12 2C12 1.45 12.1958 0.979167 12.5875 0.5875C12.9792 0.195833 13.45 0 14 0C14.55 0 15.0208 0.195833 15.4125 0.5875C15.8042 0.979167 16 1.45 16 2C16 2.55 15.8042 3.02083 15.4125 3.4125C15.0208 3.80417 14.55 4 14 4Z" fill="#00274D"/>
+                            </svg>                                                       
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="comment">
+                <span>It's a sad statement about our world that it took me almost to the end of the article to decide this is satire. I spent the first half waffling back and forth between "this is satire', and "this is plausible but doesn't feel right..."</span>
+            </div>
+            <div class="interactions-sections hide">
+                <div class="author-blog-interactions ">
+                    <div class="interactions ">
+                        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.9991 1C15.424 1 15.999 1.95 15.999 3.5C15.949 5.375 15.424 7.225 14.6491 8.925C15.749 9.025 16.8739 9 17.9989 9C19.8737 9 20.9987 9.775 20.9987 11.25C21.0237 11.85 20.6987 12.325 20.2237 12.675L20.2487 12.7C20.6487 13.625 20.6237 14.525 19.7237 15.175L19.7487 15.2C20.1487 16.125 20.1237 17.025 19.2238 17.675L19.2488 17.7C19.5238 18.475 19.4738 18.125 19.5238 18.75C19.5238 20.125 18.5238 21 17.0239 21H13.9991C12.3492 21 10.4494 20.85 8.79947 20.6C8.3745 20.525 7.94953 20.475 7.49956 20.375V20.5C7.49956 20.775 7.27458 21 6.9996 21H1.49997C1.22498 21 1 20.775 1 20.5V8.5C1 8.225 1.22498 8 1.49997 8H6.9996C7.27458 8 7.49956 8.225 7.49956 8.5V8.575C8.59949 7.925 9.39943 6.875 10.1994 5.9C10.3994 5.625 10.5994 5.325 10.7993 4.975C11.0743 4.5 12.0243 2.575 12.2492 2.2C12.7242 1.45 13.2492 1 13.9991 1ZM1.99993 9V20H6.49963V9H1.99993ZM13.9991 2C12.9992 2 12.4992 4.5 10.9993 6.5C10.0744 7.775 8.94946 8.85 7.64955 9.7L7.49956 9.775V19.325C9.62442 19.85 11.8243 19.925 13.9991 20C13.9991 20 15.999 20 16.9989 20C17.9989 20 18.4988 19.5 18.4988 18.75C18.4988 18 17.9989 18 17.9989 17.5C17.9989 17 18.9988 17 18.9988 16.25C18.9988 15.5 18.4988 15.5 18.4988 15C18.4988 14.5 19.4988 14.5 19.4988 13.75C19.4988 13 18.9988 13 18.9988 12.5C18.9988 12 19.9987 12 19.9987 11.25C19.9987 10.5 19.4988 10 17.9989 10C14.4991 10 12.9992 10 13.4992 9C14.0491 7.9 14.9991 5.5 14.9991 3.5C14.9991 2.5 14.7741 2 13.9991 2Z" stroke="#FF0D0D"/>
+                        </svg>
+                        <span>5.8K</span>                
+                    </div>
+                    <div class="interactions ">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 11.5C2.99656 12.8199 3.30493 14.1219 3.9 15.3C4.60557 16.7118 5.69025 17.8992 7.03255 18.7293C8.37485 19.5594 9.92176 19.9994 11.5 20C12.8199 20.0035 14.1219 19.6951 15.3 19.1L21 21L19.1 15.3C19.6951 14.1219 20.0034 12.8199 20 11.5C19.9994 9.92179 19.5594 8.37488 18.7293 7.03258C17.8992 5.69028 16.7117 4.6056 15.3 3.90003C14.1219 3.30496 12.8199 2.99659 11.5 3.00003H11C8.91565 3.11502 6.94696 3.99479 5.47086 5.47089C3.99476 6.94699 3.11499 8.91568 3 11V11.5Z" stroke="#FFCC00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>                
+                        <span>1 reply</span>                
+                    </div>
+                 </div>
+                 <span>Reply</span>
+            </div>
+        </div> -->
+     </div>
+     <div class="recent-posts-heading responses-heading">
+        {% if request.user.is_authenticated and subscribed_topics|length > 0 %}
+        <h3>Download Resources</h3>
+        {% else %}
+        <h3>Recent Posts</h3>
+        {% endif %}
+        <button class="hide">View All</button>
+     </div>
+     <div id="coaching-content" class="tab-content active">
+        {% if request.user.is_authenticated and subscribed_topics|length > 0 %}
+        <div class="justify-content-between pdfs">
+                    {% for file in course_files %}
+                    <div class="">
+                        <div class="pdf-container" style="background-image: url('{{file.image.url}}');">
+                            <div class="overlay">
+                                <span>{{ file.title|format_filename:file.file.name }}</span>
+                                <a href="{{ file.file.url }}" download="{{ file.file.name }}" >Download</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% for file in coaching_files %}
+                    <div class="">
+                        <div class="pdf-container" style="background-image: url('{{file.image.url}}');">
+                            <div class="overlay">
+                                <span>{{ file.title|format_filename:file.file.name }}</span>
+                                <a href="{{ file.file.url }}" download="{{ file.file.name }}">Download</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+        {% elif coaching == None and consulting == None and speaking == None and course == None %}
+        <span>No Posts</span>
+        {% else %}
+        <div class="coaching-services-container">
+            {% if coaching %}
+            <div class="coaching-services">
+                <img src="{{coaching.image.url}}" alt="">
+                <div class="main-coaching-content">
+                    <h4>{{coaching.title}}</h4>
+                    <span>{{coaching.description}}</span>
+                    <div class="book-now-coaching-btns">
+                        <button onclick="location.pathname = '/book-now/'">Book Now</button>
+                        <div class="img-container d-flex">
+                            <img src="/static/web/images/userimg1.jpg" alt=""
+                                style="position: relative; right: -60px;">
+                            <img src="/static/web/images/userimg2.jpg" alt=""
+                                style="position: relative; right: -40px;">
+                            <img src="/static/web/images/userimg3.jpg" alt=""
+                                style="position: relative; right: -20px;">
+                            <img src="/static/web/images/userimg1.jpg" alt=""
+                                style="position: relative; z-index: 1;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% if consulting %}
+            <div class="coaching-services">
+                <img src="{{consulting.image.url}}" alt="">
+                <div class="main-coaching-content">
+                    <h4>{{consulting.title}}</h4>
+                    <span>{{consulting.description}}</span>
+                    <div class="book-now-coaching-btns">
+                        <button onclick="location.pathname = '/book-now/'">Book Now</button>
+                        <div class="img-container d-flex">
+                            <img src="/static/web/images/userimg1.jpg" alt=""
+                                style="position: relative; right: -60px;">
+                            <img src="/static/web/images/userimg2.jpg" alt=""
+                                style="position: relative; right: -40px;">
+                            <img src="/static/web/images/userimg3.jpg" alt=""
+                                style="position: relative; right: -20px;">
+                            <img src="/static/web/images/userimg1.jpg" alt=""
+                                style="position: relative; z-index: 1;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% if course %}
+            <div class="coaching-services">
+                <img src="{{course.image.url}}" alt="">
+                <div class="main-coaching-content">
+                    <h4>{{course.title}}</h4>
+                    <span>{{course.description}}</span>
+                    <div class="book-now-coaching-btns">
+                        <button onclick="location.pathname = '/book-now/'">Book Now</button>
+                        <div class="img-container d-flex">
+                            <img src="/static/web/images/userimg1.jpg" alt=""
+                                style="position: relative; right: -60px;">
+                            <img src="/static/web/images/userimg2.jpg" alt=""
+                                style="position: relative; right: -40px;">
+                            <img src="/static/web/images/userimg3.jpg" alt=""
+                                style="position: relative; right: -20px;">
+                            <img src="/static/web/images/userimg1.jpg" alt=""
+                                style="position: relative; z-index: 1;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% if speaking %}
+            <div class="coaching-services">
+                <img src="{{speaking.image.url}}" alt="">
+                <div class="main-coaching-content">
+                    <h4>{{speaking.title}}</h4>
+                    <span>{{speaking.description}}</span>
+                    <div class="book-now-coaching-btns">
+                        <button onclick="location.pathname = '/book-now/'">Book Now</button>
+                        <div class="img-container d-flex">
+                            <img src="/static/web/images/userimg1.jpg" alt=""
+                                style="position: relative; right: -60px;">
+                            <img src="/static/web/images/userimg2.jpg" alt=""
+                                style="position: relative; right: -40px;">
+                            <img src="/static/web/images/userimg3.jpg" alt=""
+                                style="position: relative; right: -20px;">
+                            <img src="/static/web/images/userimg1.jpg" alt=""
+                                style="position: relative; z-index: 1;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+
+        </div>
+        {% endif %}
+    </div>
+
+</section>
+
+
+{% include "user/modals/delete-modal.html" %}
+
+{{id|json_script:"id"}}
+
+{{request.user.id|json_script:"user_id"}}
+{% endblock content %}
+
+{% block js %}
+<script src="{% static 'user/js/resources.js'%}"></script>
+
+{% endblock js %}

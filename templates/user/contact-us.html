@@ -1,0 +1,150 @@
+{% extends "user/base.html" %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'user/css/contact-us.css' %}">
+<link rel="stylesheet" href="{% static 'user/css/home.css' %}">
+<script src="https://cdn.jsdelivr.net/npm/libphonenumber-js@1.10.0/bundle/libphonenumber-js.min.js"></script>
+<script src="https://www.google.com/recaptcha/api.js?render={{RECAPTCHA_SITE_KEY}}"></script>
+{% endblock css %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+<section class="get-in-touch-section" id="Contactus">
+    <span>- Contact Me -</span>
+    <div class="get-in-touch-wrapper">
+        <div class="get-in-touch-info-wrapper">
+            <div class="keep-in-touch-content">
+                
+                <h2>Keep in Touch</h2>
+                <div class="seperator-svg">
+                    <svg width="55" height="3" viewBox="0 0 55 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line y1="1.5" x2="55" y2="1.5" stroke="#333333" stroke-width="3" />
+                    </svg>
+                </div>
+                <span>To schedule your 30-60 minutes complimentary consultation directly with Alin
+                    Marin, please reach out to him using the information below. Let him know how you
+                    came across his program and your time zone, and he will get back to you as soon
+                    as possible to schedule your private one-on-one session. (If possible, message on
+                    WhatsApp or SMS to avoid your email going to his spam box.)</span>
+            </div>
+            <div class="get-in-touch-links">
+                <div class="get-in-touch-info-card">
+                    <div class="card-icon">
+                        <svg width="65" height="65" viewBox="0 0 65 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="65" height="65" rx="10" fill="#BFD9F3" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M22.692 29.7676C22.2917 30.6378 22.2917 31.6279 22.2917 33.6079V39.7918C22.2917 42.5417 22.2917 43.9166 23.146 44.7709C23.9718 45.5966 25.284 45.6242 27.8542 45.6251V38.3336C27.8542 36.9759 28.9549 35.8752 30.3126 35.8752H34.6876C36.0453 35.8752 37.1459 36.9759 37.1459 38.3336V45.6251C39.7162 45.6242 41.0284 45.5966 41.8541 44.7709C42.7084 43.9166 42.7084 42.5417 42.7084 39.7918V33.6079C42.7084 31.6279 42.7084 30.6378 42.3082 29.7676C41.9079 28.8973 41.1562 28.253 39.6528 26.9644L38.1945 25.7144C35.4772 23.3853 34.1185 22.2207 32.5001 22.2207C30.8817 22.2207 29.523 23.3853 26.8057 25.7144L25.3473 26.9644C23.8439 28.253 23.0923 28.8973 22.692 29.7676ZM35.1459 45.6252V38.3336C35.1459 38.0804 34.9407 37.8752 34.6876 37.8752H30.3126C30.0595 37.8752 29.8542 38.0804 29.8542 38.3336V45.6252H35.1459Z"
+                                fill="#00274D" />
+                        </svg>
+                    </div>
+                    <div class="card-info">
+                        <span>Visit My Website :</span>
+                        <a class="text-decoration-none" href="http://alinmarin.com/" target="_blank"><span>alinmarin.com</span></a>
+                    </div>
+                </div>
+                <div class="get-in-touch-info-card ">
+                    <div class="card-icon">
+                        <svg width="65" height="65" viewBox="0 0 65 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="65" height="65" rx="10" fill="#BFD9F3" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M20.2537 23.1697C19.375 24.0484 19.375 25.4626 19.375 28.291V36.7077C19.375 39.5361 19.375 40.9503 20.2537 41.829C21.1324 42.7077 22.5466 42.7077 25.375 42.7077H39.625C42.4534 42.7077 43.8676 42.7077 44.7463 41.829C45.625 40.9503 45.625 39.5361 45.625 36.7077V28.291C45.625 25.4626 45.625 24.0484 44.7463 23.1697C43.8676 22.291 42.4534 22.291 39.625 22.291H25.375C22.5466 22.291 21.1324 22.291 20.2537 23.1697ZM24.3047 27.2923C23.8452 26.9859 23.2243 27.1101 22.9179 27.5696C22.6116 28.0292 22.7358 28.65 23.1953 28.9564L31.3906 34.4199C32.0624 34.8678 32.9376 34.8678 33.6094 34.4199L41.8047 28.9564C42.2642 28.65 42.3884 28.0292 42.0821 27.5696C41.7757 27.1101 41.1548 26.9859 40.6953 27.2923L32.5 32.7558L24.3047 27.2923Z"
+                                fill="#00274D" />
+                        </svg>
+                    </div>
+                    <div class="card-info">
+                        <span>Email Me :</span>
+                        <a class="text-decoration-none" href="mailto:support@alinmarin.com" target="_blank"><span>support@alinmarin.com</span></a>
+                    </div>
+                </div>
+                <div class="get-in-touch-info-card">
+                    <div class="card-icon">
+                        <svg width="65" height="65" viewBox="0 0 65 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="65" height="65" rx="10" fill="#BFD9F3" />
+                            <g clip-path="url(#clip0_0_5407)">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M49.37 45.3239C48.2896 48.6069 44.057 50.2449 41.033 49.9719C36.903 49.5986 32.409 47.4076 28.9976 44.9949C23.9833 41.4482 19.2863 35.9626 16.5493 30.1409C14.615 26.0272 14.181 20.9686 17.058 17.2189C18.122 15.8329 19.2746 15.0932 21.0013 15.0069C23.4 14.8902 23.736 16.2622 24.5596 18.3996C25.1733 19.9979 25.9923 21.6289 26.4496 23.2856C27.306 26.3772 24.3123 26.5056 23.9343 29.0326C23.701 30.6262 25.6306 32.7636 26.5033 33.8999C28.1854 36.113 30.2455 38.0112 32.5886 39.5069C33.9186 40.3446 36.0606 41.8542 37.582 41.0212C39.9246 39.7379 39.7053 35.7876 42.979 37.1246C44.6753 37.8152 46.318 38.8116 47.9373 39.6842C50.441 41.0306 50.3243 42.4259 49.37 45.3239C50.084 43.1586 48.656 47.4892 49.37 45.3239Z"
+                                    fill="#00274D" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_0_5407">
+                                    <rect width="35" height="35" fill="white" transform="translate(15 15)" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div class="card-info">
+                        <span>Message Me on WhatsApp :</span>
+                        <a target="_blank" class="text-decoration-none" href="http://wa.me/+61423813281"><span>Call: +61 4 2381 3281</span></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <form class="get-in-touch-contact-wrapper" onsubmit="keepInTouchForm(event);">
+            {% csrf_token %}
+            <div class="contact-input-container">
+                <div class="contact-input-row">
+                    {% if request.user.is_authenticated and request.user.role == 'user' %}
+                    <div>
+                        <div>
+                            <input type="text" value="{{ request.user.full_name }}" name="name" id="first-name" placeholder="Name" readonly>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <input type="email" value="{{request.user.email}}" name="email" id="last-name" placeholder="Email" readonly>
+                        </div>
+                    </div>
+                    {% else %}
+                    <div>
+                        <div>
+                            <input type="text" name="name" id="first-name" placeholder="Name">
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <input type="email" name="email" id="last-name" placeholder="Email">
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="contact-input-row">
+                    <div>
+                        <div>
+                            <input type="text" name="phone_number" id="topic" placeholder="Phone" class="unset-maxwidth" />
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-input-row">
+                    <div class="w-100">
+                        <textarea name="message" id="description" placeholder="Message..." cols="30"
+                        rows="10"></textarea>
+                    </div>
+                </div>
+                <div class="form-check {% if subscribed_topics|length == 4 or 'all' in subscribed_topics %} hide {% endif %}">
+                    <input class="form-check-input" name="keep_me_updated" type="checkbox" value="" id="subscribeCheckbox">
+                    <label class="form-check-label" for="subscribeCheckbox">
+                        Keep me up to date with news and offers from time to time by email
+                    </label>
+                </div>
+                <small class="email-error-msg input-error-msg"></small>
+            </div>
+            <div class="d-flex justify-content-center align-items-center">
+                <button class="get-in-touch-btn" type="submit">
+                    <span class="spinner-border spinner-border-sm hide" role="status" aria-hidden="true"></span>
+                    <span class="btn-text">Send Message</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
+
+
+{{RECAPTCHA_SITE_KEY|json_script:"RECAPTCHA_SITE_KEY"}}
+{% endblock content %}
+
+{% block js %}
+<script src="{% static 'common/js/script.js'%}"></script>
+<script src="{% static 'user/js/keep_in_touch.js' %}"></script>
+{% endblock js %}

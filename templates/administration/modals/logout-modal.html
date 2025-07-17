@@ -1,0 +1,31 @@
+<div class="modal fade" id="LogoutModal" tabindex="-1" aria-labelledby="LogoutModalLabel" aria-hidden="true" data-bs-backdrop="static"> 
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+
+        <div class="modal-content" >
+            <div class="modal-header forgot-password">
+                <h1 class="modal-title fs-5" data-i18n="logout-modal">Logout</h1>
+            </div>
+            <div class="modal-body">
+                <div class="main-body-content">
+                    <p class="message" data-i18n="logout-modal-content">Are you sure you want to log out? Once you log out, you'll need to log in again. Do you want to proceed?</p>
+                    <form action="" method="post" id="logoutForm" onsubmit="logoutForm(event);">
+                        {% csrf_token %}
+                        <div class="error-div">
+                            <small class="input-error-msg"></small>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="main-footer-content">
+                    <button type="button" class="btn btn-primary canncel"  data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" form="logoutForm" class="btn btn-primary submit" data-type="logout" >
+                        <span class="spinner-border spinner-border-sm hide" role="status" aria-hidden="true"></span>
+                        <span class="btn-text" data-i18n="logout-modal-ok-button">Ok</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

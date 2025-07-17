@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Successful</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+            text-align: center;
+        }
+        p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+            color: #888;
+        }
+        .unsubscribe {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .unsubscribe a {
+            color: #d9534f;
+            text-decoration: none;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Registration Successful</h2>
+        <p>Dear {{full_name}},</p>
+        <p>Congratulations! Your registration has been successful.</p>
+        <p>You now have full access to all our free resources, which we continue to update over time. Simply login anytime to explore and download them.</p>
+        <p>You can access our free resources from here <a href="{{request.scheme}}://{{request.get_host}}/other-resources/" target="_blank">{{request.scheme}}://{{request.get_host}}/other-resources/</a></p>
+        <p>Additionally, you have been subscribed to our email list, and we’ll be in touch with the latest updates and insights. If you prefer not to receive these updates, you can unsubscribe anytime by clicking the unsubscribe button below.</p>
+        <p>Thank You</p>
+        <p>Team Construction Project Management Success</p>
+        <div class="footer">
+            <p>&copy; 2025 Construction Project Management Success. All rights reserved.</p>
+            <p class="unsubscribe"><a href="{{ unsubscribe_url }}">Unsubscribe</a></p>
+        </div>
+    </div>
+</body>
+</html>

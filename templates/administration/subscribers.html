@@ -1,0 +1,55 @@
+{% extends "administration/base.html" %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'administration/css/blogs.css' %}">
+{% endblock css %}
+{% block title %} Subscribers {% endblock title %}
+{% block content %}
+
+<div class="blogs-and-tags">
+    <div class="blogs-heading">
+        {% comment %} <h4>Blogs</h4> {% endcomment %}
+    </div>
+    <div class="blogs-table">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th width="24.33%">Email</th>
+                    <th width="24.33%">Name</th>
+                    <th width="24.33%">Services type</th>
+                    <th width="24.33%">Action</th>
+                </tr>
+              </thead>              
+            <tbody id="subscribers-listing-container">                   
+                <tr>
+                    <td colspan="4" class="border-none">
+                        <div class="d-flex justify-content-center">
+                            <span class="spinner-border spinner-border-md" role="status" aria-hidden="true"></span>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="pagination-div" id="pagination-container">
+        <div class="">
+            <div id="pagination-get-previous-record-btn" class="prev-btn first-btn">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.16667 14.166L5 9.99935L9.16667 5.83268M15 14.166L10.8333 9.99935L15 5.83268" stroke="#333333" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div class="pages" id="pages-container">
+            </div>
+            <div id="pagination-get-next-record-btn" class="next-btn last-btn">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10.8333 14.166L15 9.99935L10.8333 5.83268M5 14.166L9.16667 9.99935L5 5.83268" stroke="#333333" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>            
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+{% block js %}
+<script src="{% static 'administration/js/subscribers.js' %}"></script>
+{% endblock js %}

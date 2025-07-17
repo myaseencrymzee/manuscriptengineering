@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to Alin Marin's Community</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #333333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            border: 1px solid #e0e0e0;
+            padding: 30px;
+            border-radius: 8px;
+        }
+        h1 {
+            color: #066AFF;
+        }
+        .lead-magnet {
+            text-align: center;
+            margin: 20px 0;
+            display: none;
+        }
+        .lead-magnet img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 14px;
+            color: #888;
+            margin-top: 30px;
+            display: none;
+        }
+        .unsubscribe a {
+            color: #d9534f;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Community!</h1>
+        <p>Hi {{ subscriber.name|default:"there" }},</p>
+
+        <p>Thank you for subscribing to Alin Marin's updates. We're excited to have you on board!</p>
+
+        <p>As promised, here's your free copy of our <strong>Time Management & Self-Reflection Workbook</strong>. You’ll find it attached to this email.</p>
+
+        <div class="lead-magnet">
+            {% if popup_lead_magnet_image %}
+                <img src="{{ popup_lead_magnet_image }}" alt="Time Management Workbook">
+            {% endif %}
+        </div>
+
+        <p>You can also sign up or log in to access <strong>dozens of other tools</strong> available for free to our community members.</p>
+
+        <p>Best regards,<br>Alin Marin & Team</p>
+
+        <div class="footer" >
+            <p class="unsubscribe ">
+                Don’t want to receive these emails? <a href="{{ unsubscribe_url }}">Unsubscribe</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

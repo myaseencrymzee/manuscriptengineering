@@ -1,0 +1,101 @@
+{% extends "user/base.html" %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'user/css/profile-manage.css' %}">
+<link rel="stylesheet" href="{% static 'user/modals/css/profile-update.css' %}">
+{% endblock css %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+
+<main>
+    <div class="main-content-profile">  
+        <div class="content">
+        <div class="logo-svg">
+            <span>- Profile-</span>  
+            <h3>Profile Management</h3>                
+        </div> 
+            <form method="post" id="userProfileManagement" class="body" >
+            {% csrf_token %}
+                <div class="profile-pic-div">
+                    <label for="profile-upload" class="profile-pic profile-container">
+                        <div class="upload-icon">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="22" height="22" rx="5" fill="#00274D"/>
+                                <path d="M17.1736 6.42913H14.6705L14.0475 5.48056C13.7332 5.00056 13.2056 4.71484 12.6444 4.71484H9.35574C8.79451 4.71484 8.26696 5.00056 7.95268 5.48056L7.32971 6.42913H4.82656C3.90055 6.42913 3.14288 7.20057 3.14288 8.14341V15.572C3.14288 16.5148 3.90055 17.2863 4.82656 17.2863H17.1735C18.0995 17.2863 18.8572 16.5148 18.8572 15.572V8.14341C18.8572 7.20057 18.0996 6.42913 17.1736 6.42913ZM11.0001 15.0006C9.14244 15.0006 7.63279 13.4634 7.63279 11.572C7.63279 9.68055 9.14247 8.14341 11.0001 8.14341C12.8578 8.14341 14.3675 9.68055 14.3675 11.572C14.3675 13.4634 12.8578 15.0006 11.0001 15.0006ZM13.245 11.572C13.245 12.8348 12.2404 13.8577 11.0001 13.8577C9.75984 13.8577 8.75524 12.8348 8.75524 11.572C8.75524 10.3091 9.75984 9.28627 11.0001 9.28627C12.2404 9.28627 13.245 10.3091 13.245 11.572Z" fill="white"/>
+                            </svg>
+                        </div>
+                        <img src="{{request.user.profile_picture.url}}" id="profile-img" alt="Profile Picture" />
+                    </label>
+                    <input type="file" name="profile_picture" id="profile-upload" accept="image/*">
+                </div>
+                
+                <div class="input-wrapper">
+                    
+                    <label for="full-name">Full Name</label>
+                    <div>
+                        <input class="inactive" type="text" value="{{request.user.full_name}}" name="full_name" id="full_name" placeholder="Alexandra John" maxlength="100" readonly>
+                        <svg class="cursor-pointer" onclick="openUpdateNameModal('{{request.user.full_name}}')" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.16602 3.33417H3.33268C2.89065 3.33417 2.46673 3.50977 2.15417 3.82233C1.84161 4.13489 1.66602 4.55881 1.66602 5.00084V16.6675C1.66602 17.1095 1.84161 17.5335 2.15417 17.846C2.46673 18.1586 2.89065 18.3342 3.33268 18.3342H14.9993C15.4414 18.3342 15.8653 18.1586 16.1779 17.846C16.4904 17.5335 16.666 17.1095 16.666 16.6675V10.8342M15.416 2.08417C15.7475 1.75265 16.1972 1.56641 16.666 1.56641C17.1349 1.56641 17.5845 1.75265 17.916 2.08417C18.2475 2.41569 18.4338 2.86533 18.4338 3.33417C18.4338 3.80301 18.2475 4.25265 17.916 4.58417L9.99935 12.5008L6.66602 13.3342L7.49935 10.0008L15.416 2.08417Z" stroke="#00274D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg> 
+                    </div>                       
+                </div>
+                
+                <div class="input-wrapper">
+                    <label for="email-address">Email Address</label>
+                    <div>
+                        <input class="inactive" type="email" value="{{request.user.email}}" name="email" id="email" placeholder="@alexa01" maxlength="50" readonly>
+                        <svg class="cursor-pointer" onclick="openUpdateEmailModal('{{request.user.email}}')" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_1378_912)">
+                            <path d="M9.16602 3.33417H3.33268C2.89065 3.33417 2.46673 3.50977 2.15417 3.82233C1.84161 4.13489 1.66602 4.55881 1.66602 5.00084V16.6675C1.66602 17.1095 1.84161 17.5335 2.15417 17.846C2.46673 18.1586 2.89065 18.3342 3.33268 18.3342H14.9993C15.4414 18.3342 15.8653 18.1586 16.1779 17.846C16.4904 17.5335 16.666 17.1095 16.666 16.6675V10.8342M15.416 2.08417C15.7475 1.75265 16.1972 1.56641 16.666 1.56641C17.1349 1.56641 17.5845 1.75265 17.916 2.08417C18.2475 2.41569 18.4338 2.86533 18.4338 3.33417C18.4338 3.80301 18.2475 4.25265 17.916 4.58417L9.99935 12.5008L6.66602 13.3342L7.49935 10.0008L15.416 2.08417Z" stroke="#00274D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_1378_912">
+                            <rect width="20" height="20" fill="white"/>
+                            </clipPath>
+                            </defs>
+                        </svg>                            
+                    </div>
+                    
+                </div>
+                <div class="input-wrapper">
+                    <label for="password">Password</label>
+                    <div class="w-100 password-input-div">
+                        <input type="password" name="password" data-type="password" id="password" placeholder="******" readonly>
+                        <svg class="cursor-pointer" onclick="openUpdatePasswordModa()" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_1378_912)">
+                            <path d="M9.16602 3.33417H3.33268C2.89065 3.33417 2.46673 3.50977 2.15417 3.82233C1.84161 4.13489 1.66602 4.55881 1.66602 5.00084V16.6675C1.66602 17.1095 1.84161 17.5335 2.15417 17.846C2.46673 18.1586 2.89065 18.3342 3.33268 18.3342H14.9993C15.4414 18.3342 15.8653 18.1586 16.1779 17.846C16.4904 17.5335 16.666 17.1095 16.666 16.6675V10.8342M15.416 2.08417C15.7475 1.75265 16.1972 1.56641 16.666 1.56641C17.1349 1.56641 17.5845 1.75265 17.916 2.08417C18.2475 2.41569 18.4338 2.86533 18.4338 3.33417C18.4338 3.80301 18.2475 4.25265 17.916 4.58417L9.99935 12.5008L6.66602 13.3342L7.49935 10.0008L15.416 2.08417Z" stroke="#00274D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_1378_912">
+                            <rect width="20" height="20" fill="white"/>
+                            </clipPath>
+                            </defs>
+                        </svg>                                                      
+                    </div>                                
+                </div>
+                <div class="error-div">
+                    <small class="input-error-msg"></small>
+                </div>
+                <!-- <div class="footer">
+                    <div class="main-footer-content m-0">
+                        <button type="submit">
+                            <span class="spinner-border spinner-border-sm hide" role="status" aria-hidden="true"></span>
+                            <span class="btn-text">Sign Up</span>
+                        </button>
+                        <div><span>Already have an account? </span><a href="/user-signin/">Sign In</a></div>
+                    </div>
+                </div> -->
+            </form>
+        </div>
+    </div>
+</main>
+
+{% include "user/modals/update-profile.html" %}
+
+{% endblock content %}
+
+{% block js %}
+<script src="{% static 'user/js/profile-manage.js'%}"></script>
+{% endblock js %}

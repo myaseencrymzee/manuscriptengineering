@@ -1,0 +1,156 @@
+{% extends "user/base.html" %}
+{% load static %}
+{% load custom_tags %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'user/css/all-resources.css' %}">
+{% endblock css %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+
+<section class="all-resources">
+    <div class="recent-posts-heading responses-heading">
+        
+        {% comment %}
+        {% if request.user.is_authenticated and subscribed_topics|length > 0 %}
+        {% endcomment %}
+        {% if request.user.is_authenticated %}
+        <h3>Download Resources</h3>
+        {% else %}
+        <h3>Recent Posts</h3>
+        {% endif %}
+        <button class="hide">View All</button>
+     </div>
+     <div id="coaching-content" class="tab-content active">
+        {% if request.user.is_authenticated %}
+        <div class="justify-content-between pdfs">
+                    {% for file in course_files %}
+                    <div class="">
+                        <div class="pdf-container" style="background-image: url('{{file.image.url}}');">
+                            <div class="overlay">
+                                <span>{{ file.title|format_filename:file.file.name }}</span>
+                                <a href="{{ file.file.url }}" download="{{ file.file.name }}" >Download</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% for file in coaching_files %}
+                    <div class="">
+                        <div class="pdf-container" style="background-image: url('{{file.image.url}}');">
+                            <div class="overlay">
+                                <span>{{ file.title|format_filename:file.file.name }}</span>
+                                <a href="{{ file.file.url }}" download="{{ file.file.name }}">Download</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+        {% elif coaching == None and consulting == None and speaking == None and course == None %}
+        <span>No Posts</span>
+        {% else %}
+        <div class="coaching-services-container">
+            {% if coaching %}
+            <div class="coaching-services">
+                <img src="{{coaching.image.url}}" alt="">
+                <div class="main-coaching-content">
+                    <h4>{{coaching.title}}</h4>
+                    <span>{{coaching.description}}</span>
+                    <div class="book-now-coaching-btns">
+                        <button onclick="location.pathname = '/book-now/'">Book Now</button>
+                        <div class="img-container d-flex">
+                            <img src="/static/web/images/userimg1.jpg" alt=""
+                                style="position: relative; right: -60px;">
+                            <img src="/static/web/images/userimg2.jpg" alt=""
+                                style="position: relative; right: -40px;">
+                            <img src="/static/web/images/userimg3.jpg" alt=""
+                                style="position: relative; right: -20px;">
+                            <img src="/static/web/images/userimg1.jpg" alt=""
+                                style="position: relative; z-index: 1;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% if consulting %}
+            <div class="coaching-services">
+                <img src="{{consulting.image.url}}" alt="">
+                <div class="main-coaching-content">
+                    <h4>{{consulting.title}}</h4>
+                    <span>{{consulting.description}}</span>
+                    <div class="book-now-coaching-btns">
+                        <button onclick="location.pathname = '/book-now/'">Book Now</button>
+                        <div class="img-container d-flex">
+                            <img src="/static/web/images/userimg1.jpg" alt=""
+                                style="position: relative; right: -60px;">
+                            <img src="/static/web/images/userimg2.jpg" alt=""
+                                style="position: relative; right: -40px;">
+                            <img src="/static/web/images/userimg3.jpg" alt=""
+                                style="position: relative; right: -20px;">
+                            <img src="/static/web/images/userimg1.jpg" alt=""
+                                style="position: relative; z-index: 1;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% if course %}
+            <div class="coaching-services">
+                <img src="{{course.image.url}}" alt="">
+                <div class="main-coaching-content">
+                    <h4>{{course.title}}</h4>
+                    <span>{{course.description}}</span>
+                    <div class="book-now-coaching-btns">
+                        <button onclick="location.pathname = '/book-now/'">Book Now</button>
+                        <div class="img-container d-flex">
+                            <img src="/static/web/images/userimg1.jpg" alt=""
+                                style="position: relative; right: -60px;">
+                            <img src="/static/web/images/userimg2.jpg" alt=""
+                                style="position: relative; right: -40px;">
+                            <img src="/static/web/images/userimg3.jpg" alt=""
+                                style="position: relative; right: -20px;">
+                            <img src="/static/web/images/userimg1.jpg" alt=""
+                                style="position: relative; z-index: 1;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% if speaking %}
+            <div class="coaching-services">
+                <img src="{{speaking.image.url}}" alt="">
+                <div class="main-coaching-content">
+                    <h4>{{speaking.title}}</h4>
+                    <span>{{speaking.description}}</span>
+                    <div class="book-now-coaching-btns">
+                        <button onclick="location.pathname = '/book-now/'">Book Now</button>
+                        <div class="img-container d-flex">
+                            <img src="/static/web/images/userimg1.jpg" alt=""
+                                style="position: relative; right: -60px;">
+                            <img src="/static/web/images/userimg2.jpg" alt=""
+                                style="position: relative; right: -40px;">
+                            <img src="/static/web/images/userimg3.jpg" alt=""
+                                style="position: relative; right: -20px;">
+                            <img src="/static/web/images/userimg1.jpg" alt=""
+                                style="position: relative; z-index: 1;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+{{id|json_script:"id"}}
+
+{{request.user.id|json_script:"user_id"}}
+{% endblock content %}
+
+{% block js %}
+<!-- <script src="{% static 'user/js/all-resources.js'%}"></script> -->
+
+{% endblock js %}

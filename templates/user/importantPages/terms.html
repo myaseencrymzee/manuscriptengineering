@@ -1,0 +1,59 @@
+{% extends "user/base.html" %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'common/css/style.css' %}">
+<link rel="stylesheet" href="{% static 'user/css/terms_privacy.css' %}">
+{% endblock css %}
+
+{% block title %}Terms of Service{% endblock title %}
+
+{% block content %}
+<section class="terms-policy-section">
+    <div class="terms-policy">
+        <h1>Terms of Service</h1>
+        <ol>
+            <li>
+                <h2>Introduction</h2>
+                <p>Welcome to my websites, <a href="https://alinmarin.com/" target="_blank">AlinMarin.com</a> and <a href="http://constructionprojectmanagementsuccess.com/" target="_blank">ConstructionProjectManagementSuccess.com</a> My name is Alin Marin, and by accessing or using these websites, you agree to comply with these Terms of Service. If you have questions, please contact me at <a href="mailto:support@alinmarin.com">support@alinmarin.com</a></p>
+            </li>
+            <li>
+                <h2>Purpose</h2>
+                <p>I created these websites to share insights, resources, blog posts, downloadable materials, and information about my books and courses. Some content may include links directing you to external platforms such as Udemy or Amazon.</p>
+            </li>
+            <li>
+                <h2>Intellectual Property</h2>
+                <p>All materials provided on my websites—including texts, blogs, graphics, logos, downloadable resources, courses, and guides—are my intellectual property. You are welcome to use these materials solely for personal, non-commercial purposes. Redistribution, reproduction, or commercial use without my explicit permission is strictly prohibited.</p>
+            </li>
+            <li>
+                <h2>User Conduct</h2>
+                <p>When using these websites, please respect others and refrain from harmful or unlawful actions. Any misuse, including unauthorized access or distribution of malicious content, is prohibited.</p>
+            </li>
+            <li>
+                <h2>Third-Party Links</h2>
+                <p>My websites contain links to third-party platforms for your convenience (such as Udemy and Amazon). Please note, I am not responsible for content or practices on these external websites.</p>
+            </li>
+            <li>
+                <h2>Disclaimer</h2>
+                <p>All information provided here is for general educational purposes. While I strive for accuracy, I cannot guarantee the completeness, accuracy, or applicability of any content provided.</p>
+            </li>
+            <li>
+                <h2>Limitation of Liability</h2>
+                <p>I am not responsible or liable for any losses, damages, or liabilities arising from your use of my websites or linked third-party websites.</p>
+            </li>
+            <li>
+                <h2>Age Restrictions</h2>
+                <p>My websites are intended for individuals aged 18 and over. If you’re under 18, you must obtain parental or guardian permission before accessing or using my websites.</p>
+            </li>
+            <li>
+                <h2>Updates to Terms</h2>
+                <p>I may periodically update these Terms of Service. Your continued use of my websites after updates indicates your acceptance of the new terms.</p>
+            </li>
+            <li>
+                <h2>Governing Law</h2>
+                <p>These Terms are governed by the laws of Queensland, Australia. Any disputes related to these Terms will be subject to the jurisdiction of Queensland, Australia.</p>
+            </li>
+        </ol>
+    </div>
+</section>
+{% endblock %}
+</html>

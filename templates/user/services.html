@@ -1,0 +1,113 @@
+{% extends "user/base.html" %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'user/css/home.css' %}">
+<link rel="stylesheet" href="{% static 'user/css/services.css' %}">
+{% endblock css %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+
+<div class="separate-coaching-content">
+    <div class="coaching-content-heading">
+        <svg onclick="history.back()" class="cursor-pointer" width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="24" height="24" rx="5" fill="#00274D"/>
+            <path d="M7.825 13L13.425 18.6L12 20L4 12L12 4L13.425 5.4L7.825 11H20V13H7.825Z" fill="white"/>
+        </svg>
+        <span>All {{type}} Services</span> 
+               
+    </div>
+    <div id="coaching-content" class="tab-content active">
+        <div class="coaching-services-container" id="coaching-services-container">          
+            <div class="coaching-services">
+                <img src="/static/web/images/courcesimg2.png" alt="">
+                <div class="main-coaching-content">
+                    <h4>title</h4>
+                    <span>description</span>
+                    <div class="book-now-coaching-btns">
+                        <button onclick="location.pathname = '/book-now/'">Book Now</button>
+                        <div class="img-container hide">
+                            <img src="/static/web/images/userimg1.jpg" alt=""
+                                style="position: relative; right: -60px;">
+                            <img src="/static/web/images/userimg2.jpg" alt=""
+                                style="position: relative; right: -40px;">
+                            <img src="/static/web/images/userimg3.jpg" alt=""
+                                style="position: relative; right: -20px;">
+                            <img src="/static/web/images/userimg1.jpg" alt=""
+                                style="position: relative; z-index: 1;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="coaching-services">
+                <img src="/static/web/images/courcesimg2.png" alt="">
+                <div class="main-coaching-content">
+                    <h4>title</h4>
+                    <span>description</span>
+                    <div class="book-now-coaching-btns">
+                        <button onclick="location.pathname = '/book-now/'">Book Now</button>
+                        <div class="img-container hide">
+                            <img src="/static/web/images/userimg1.jpg" alt=""
+                                style="position: relative; right: -60px;">
+                            <img src="/static/web/images/userimg2.jpg" alt=""
+                                style="position: relative; right: -40px;">
+                            <img src="/static/web/images/userimg3.jpg" alt=""
+                                style="position: relative; right: -20px;">
+                            <img src="/static/web/images/userimg1.jpg" alt=""
+                                style="position: relative; z-index: 1;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="coaching-services">
+                <img src="/static/web/images/courcesimg2.png" alt="">
+                <div class="main-coaching-content">
+                    <h4>title</h4>
+                    <span>description</span>
+                    <div class="book-now-coaching-btns">
+                        <button onclick="location.pathname = '/book-now/'">Book Now</button>
+                        <div class="img-container hide">
+                            <img src="/static/web/images/userimg1.jpg" alt=""
+                                style="position: relative; right: -60px;">
+                            <img src="/static/web/images/userimg2.jpg" alt=""
+                                style="position: relative; right: -40px;">
+                            <img src="/static/web/images/userimg3.jpg" alt=""
+                                style="position: relative; right: -20px;">
+                            <img src="/static/web/images/userimg1.jpg" alt=""
+                                style="position: relative; z-index: 1;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="coaching-services">
+                <img src="/static/web/images/courcesimg2.png" alt="">
+                <div class="main-coaching-content">
+                    <h4>title</h4>
+                    <span>description</span>
+                    <div class="book-now-coaching-btns">
+                        <button onclick="location.pathname = '/book-now/'">Book Now</button>
+                        <div class="img-container hide">
+                            <img src="/static/web/images/userimg1.jpg" alt=""
+                                style="position: relative; right: -60px;">
+                            <img src="/static/web/images/userimg2.jpg" alt=""
+                                style="position: relative; right: -40px;">
+                            <img src="/static/web/images/userimg3.jpg" alt=""
+                                style="position: relative; right: -20px;">
+                            <img src="/static/web/images/userimg1.jpg" alt=""
+                                style="position: relative; z-index: 1;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{type|json_script:"type"}}
+
+{% endblock content %}
+
+{% block js %}
+<script src="{% static 'user/js/services.js'%}"></script>
+{% endblock js %}

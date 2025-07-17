@@ -1,0 +1,27 @@
+{% extends "administration/base.html" %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'administration/css/faq.css' %}">
+{% endblock css %}
+{% block title %}FAQs{% endblock title %}
+{% block content %}
+
+<div class="all-faqs">
+    <div class="faq-heading">
+        <h2>All FAQs</h2>
+    </div>
+    <div class="faq-container" id="faq-container">
+        <div class="w-100 d-flex justify-content-center">
+            <span class="spinner-border spinner-border-md" role="status" aria-hidden="true"></span>
+        </div>
+    </div>
+</div>
+
+
+
+{% include "administration/modals/servicesmodals.html" %}
+
+{% endblock %}
+{% block js %}
+<script src="{% static "administration/js/faqs.js" %}"></script>
+{% endblock js %}

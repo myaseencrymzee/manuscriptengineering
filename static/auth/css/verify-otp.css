@@ -1,0 +1,134 @@
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    min-height: 100vh;
+    padding: 10px;
+}
+
+.main-content {
+    padding: 20px;
+    width: 100%;
+    max-width: 657px;
+    border-radius: 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 20px 0px #D0D1D780;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    position: relative;
+}
+.main-content .back-arrow {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+.main-content > .content {
+    width: 342px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 13px;
+    gap: 10px;
+}
+.content h4{
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: unset;
+    color: var(--primary-text-color);
+}
+
+.content > span {
+    color: var(--primary-text-color);
+}
+
+.content form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    gap: 20px;
+}
+
+.input-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form > .input-wrapper input{
+    border: 1px solid #E7E7E7;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+form > .input-wrapper label{
+    font-size: 16px;
+    font-weight: 500;
+
+}
+
+form > .button-div  > button{
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 8px ;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.otp-inputs{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.otp-inputs input{
+    width: 48px;
+    height: 50px;
+    border-radius: 6px;
+    border: 1px solid #E7E7E7;
+    padding: 10px;
+    text-align: center;
+    
+}
+
+.otp-inputs input:focus{
+    outline: 1px solid var(--primary-color);
+}
+
+.button-div{
+    display: flex;
+    /* align-items: center; */
+    flex-direction: column;
+}
+
+.button-div span{
+    text-align: center;
+    color: var(--primary-text-color);
+    font-weight: 400;
+
+}
+
+.button-div > span > a {
+    text-decoration: none;
+}
+
+.button-div > span > a > span{
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.filled-input {
+    border: 1px solid var(--primary-color) !important;
+}

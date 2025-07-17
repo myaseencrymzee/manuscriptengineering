@@ -1,0 +1,448 @@
+<div class="modal fade" id="addCourcesModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="addCourcesModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 fw-bold" id="staticBackdropLabel">Add Course</h1>
+          <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+        </div>
+        <div class="modal-body"> 
+            <form method="post" class="services-modal">
+                {% csrf_token %}
+                <div class="input-wrappers">
+                    <label>Course Title</label>
+                    <input type="text" name="title" placeholder="Enter course title">
+                </div>
+                <!-- Upload Image -->
+                 <div class="input-wrappers">
+                    <label>Course Image</label>
+                    <label for="image-input" class="upload-box" id="image-box">
+                        <input type="file" name="image" id="image-input" accept="image/*" hidden>
+                        <svg width="38" height="32" viewBox="0 0 38 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_406_4620)">
+                            <path d="M25.3327 22.4L18.9993 16M18.9993 16L12.666 22.4M18.9993 16V30.4" stroke="#00274D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M32.2835 26.2236C33.8278 25.3728 35.0477 24.0266 35.7508 22.3974C36.4539 20.7682 36.6 18.9488 36.1662 17.2263C35.7323 15.5038 34.7432 13.9764 33.3549 12.8851C31.9666 11.7938 30.2582 11.2008 28.4993 11.1996H26.5043C26.0251 9.32637 25.1318 7.58732 23.8917 6.11317C22.6517 4.63903 21.097 3.46814 19.3446 2.68856C17.5923 1.90897 15.6879 1.54096 13.7745 1.6122C11.8612 1.68343 9.98868 2.19206 8.29786 3.09985C6.60703 4.00763 5.14185 5.29095 4.01248 6.85331C2.8831 8.41568 2.11892 10.2164 1.77738 12.1202C1.43584 14.024 1.52583 15.9812 2.04058 17.8448C2.55534 19.7084 3.48146 21.4298 4.74933 22.8796" stroke="#00274D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M25.3327 22.4L18.9993 16L12.666 22.4" stroke="#00274D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_406_4620">
+                            <rect width="38" height="32" fill="white"/>
+                            </clipPath>
+                            </defs>
+                        </svg>                    
+                        <span>Upload Image</span>
+                        <div id="image-preview" class="hide image-preview"></div>
+                    </label>
+                 </div>
+                <!-- Course Description -->
+                <div class="input-wrappers">
+                    <label>Course Description</label>
+                    <textarea name="description" placeholder="Description..."></textarea>
+                </div>
+                <!-- Upload File -->
+                <div class="input-wrappers">
+                    <label>Course Material</label>
+                    <label for="file-input" class="upload-box" id="file-box">
+                        <input type="file" name="file" id="file-input" accept=".pdf,application/pdf" hidden>
+                        <svg width="38" height="26" viewBox="0 0 38 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M26.6379 25.5143H29.5078C33.7233 25.5143 37.1411 22.1372 37.1411 17.972C37.1411 13.8068 33.7233 10.4297 29.5078 10.4297C28.4897 10.4297 27.5177 10.6276 26.6301 10.9844C26.5389 6.8981 23.1583 3.61328 19.0002 3.61328C14.8422 3.61328 11.4615 6.89921 11.3704 10.9844C10.4827 10.6276 9.51073 10.4297 8.49259 10.4297C4.27717 10.4297 0.859375 13.8068 0.859375 17.972C0.859375 22.1372 4.27717 25.5143 8.49259 25.5143H11.3625" fill="#D6E9FB" fill-opacity="0.69"/>
+                            <path d="M16.8586 16.8968V6.83277H12.8594L19.2099 0.484375L25.5583 6.83277H21.5612V16.8862" fill="#00274D"/>
+                        </svg>                    
+                        <span >Upload File</span>
+                        <span id="course-file-name"></span>
+                    </label>
+                </div>
+                <!-- Upload video File -->
+                <div class="input-wrappers">
+                    <label>Course Video</label>
+                    <label for="course-video-file-input" class="upload-box" id="file-box">
+                        <input type="file" name="video_file" id="course-video-file-input" accept=".mp4,.webm,.ogg,video/mp4,video/webm,video/ogg" hidden>
+                        <svg width="38" height="26" viewBox="0 0 38 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M26.6379 25.5143H29.5078C33.7233 25.5143 37.1411 22.1372 37.1411 17.972C37.1411 13.8068 33.7233 10.4297 29.5078 10.4297C28.4897 10.4297 27.5177 10.6276 26.6301 10.9844C26.5389 6.8981 23.1583 3.61328 19.0002 3.61328C14.8422 3.61328 11.4615 6.89921 11.3704 10.9844C10.4827 10.6276 9.51073 10.4297 8.49259 10.4297C4.27717 10.4297 0.859375 13.8068 0.859375 17.972C0.859375 22.1372 4.27717 25.5143 8.49259 25.5143H11.3625" fill="#D6E9FB" fill-opacity="0.69"/>
+                            <path d="M16.8586 16.8968V6.83277H12.8594L19.2099 0.484375L25.5583 6.83277H21.5612V16.8862" fill="#00274D"/>
+                        </svg>                    
+                        <span >Upload Video</span>
+                        <span id="course-file-name"></span>
+                    </label>
+                </div>
+                <div class="videos-container hide"></div>
+                <div class="error-div text-start w-100">
+                    <small class="input-error-msg"></small>
+                </div>
+                <!-- Buttons -->
+                <div class="buttons">
+                    <button type="button" class="cancel" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="save">
+                        <span class="spinner-border spinner-border-sm hide" role="status" aria-hidden="true"></span>
+                        <span class="btn-text text-white">Save</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+      </div>
+    </div>
+</div>
+<input type="hidden" class="addCourcesModal" data-bs-toggle="modal" data-bs-target="#addCourcesModal" />
+
+
+<!-- Add coaching modalll -->
+<div class="modal fade" id="addCoachingModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="addCoachingModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 fw-bold" id="staticBackdropLabel">Add Coaching</h1>
+          <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+        </div>
+        <div class="modal-body"> 
+            <form method="post" class="services-modal">
+                {% csrf_token %}
+                <div class="input-wrappers">
+                    <label>Coaching Title</label>
+                    <input type="text" name="title" placeholder="Enter coaching title">
+                </div>
+                <!-- Upload Image -->
+                <div class="input-wrappers">
+                    <label>Coaching Image</label>
+                    <label for="coaching-image-input" class="upload-box" id="image-box">
+                        <input type="file" name="image" id="coaching-image-input" accept="image/*" hidden>
+                        <svg width="38" height="32" viewBox="0 0 38 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_406_4620)">
+                            <path d="M25.3327 22.4L18.9993 16M18.9993 16L12.666 22.4M18.9993 16V30.4" stroke="#00274D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M32.2835 26.2236C33.8278 25.3728 35.0477 24.0266 35.7508 22.3974C36.4539 20.7682 36.6 18.9488 36.1662 17.2263C35.7323 15.5038 34.7432 13.9764 33.3549 12.8851C31.9666 11.7938 30.2582 11.2008 28.4993 11.1996H26.5043C26.0251 9.32637 25.1318 7.58732 23.8917 6.11317C22.6517 4.63903 21.097 3.46814 19.3446 2.68856C17.5923 1.90897 15.6879 1.54096 13.7745 1.6122C11.8612 1.68343 9.98868 2.19206 8.29786 3.09985C6.60703 4.00763 5.14185 5.29095 4.01248 6.85331C2.8831 8.41568 2.11892 10.2164 1.77738 12.1202C1.43584 14.024 1.52583 15.9812 2.04058 17.8448C2.55534 19.7084 3.48146 21.4298 4.74933 22.8796" stroke="#00274D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M25.3327 22.4L18.9993 16L12.666 22.4" stroke="#00274D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_406_4620">
+                            <rect width="38" height="32" fill="white"/>
+                            </clipPath>
+                            </defs>
+                        </svg>                    
+                        <span>Upload Image</span>
+                        <div id="coaching-image-preview" class="hide image-preview"></div>
+                    </label>
+                 </div>
+                <!-- Course Description -->
+                <div class="input-wrappers">
+                    <label>Coaching Description</label>
+                    <textarea name="description" placeholder="Description..."></textarea>
+                </div>
+                <!-- Upload File -->
+                <div class="input-wrappers">
+                    <label>Coaching Material</label>
+                    <label for="coaching-file-input" class="upload-box" id="file-box">
+                        <input name="file" type="file" id="coaching-file-input" hidden>
+                        <svg width="38" height="26" viewBox="0 0 38 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M26.6379 25.5143H29.5078C33.7233 25.5143 37.1411 22.1372 37.1411 17.972C37.1411 13.8068 33.7233 10.4297 29.5078 10.4297C28.4897 10.4297 27.5177 10.6276 26.6301 10.9844C26.5389 6.8981 23.1583 3.61328 19.0002 3.61328C14.8422 3.61328 11.4615 6.89921 11.3704 10.9844C10.4827 10.6276 9.51073 10.4297 8.49259 10.4297C4.27717 10.4297 0.859375 13.8068 0.859375 17.972C0.859375 22.1372 4.27717 25.5143 8.49259 25.5143H11.3625" fill="#D6E9FB" fill-opacity="0.69"/>
+                            <path d="M16.8586 16.8968V6.83277H12.8594L19.2099 0.484375L25.5583 6.83277H21.5612V16.8862" fill="#00274D"/>
+                        </svg>                    
+                        <span onclick="document.getElementById('coaching-file-input').click()">Upload File</span>
+                        <span id="coaching-file-name"></span>
+                    </label>
+                </div>
+                <div class="error-div text-start w-100">
+                    <small class="input-error-msg"></small>
+                </div>
+                <!-- Buttons -->
+                <div class="buttons">
+                    <button type="button" class="cancel" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="save">
+                        <span class="spinner-border spinner-border-sm hide" role="status" aria-hidden="true"></span>
+                        <span class="btn-text text-white">Save</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+      </div>
+    </div>
+</div>
+<input type="hidden" class="addCoachingModal" data-bs-toggle="modal" data-bs-target="#addCoachingModal" />
+
+
+<!-- consulting modaalllll -->
+<div class="modal fade" id="addConsultingModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="addConsultingModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 fw-bold" id="staticBackdropLabel">Add Consulting</h1>
+          <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+        </div>
+        <div class="modal-body"> 
+            <form method="post" class="services-modal">
+                {% csrf_token %}
+                <div class="input-wrappers">
+                    <label>Consulting Title</label>
+                    <input type="text" name="title" placeholder="Enter consulting title">
+                </div>
+                <!-- Upload Image -->
+                 <div class="input-wrappers">
+                    <label>Consulting Image</label>
+                    <div class="upload-box" id="image-box">
+                        <input type="file" id="consulting-image-input" name="image" accept="image/*" hidden>
+                        <svg width="38" height="32" viewBox="0 0 38 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_406_4620)">
+                            <path d="M25.3327 22.4L18.9993 16M18.9993 16L12.666 22.4M18.9993 16V30.4" stroke="#00274D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M32.2835 26.2236C33.8278 25.3728 35.0477 24.0266 35.7508 22.3974C36.4539 20.7682 36.6 18.9488 36.1662 17.2263C35.7323 15.5038 34.7432 13.9764 33.3549 12.8851C31.9666 11.7938 30.2582 11.2008 28.4993 11.1996H26.5043C26.0251 9.32637 25.1318 7.58732 23.8917 6.11317C22.6517 4.63903 21.097 3.46814 19.3446 2.68856C17.5923 1.90897 15.6879 1.54096 13.7745 1.6122C11.8612 1.68343 9.98868 2.19206 8.29786 3.09985C6.60703 4.00763 5.14185 5.29095 4.01248 6.85331C2.8831 8.41568 2.11892 10.2164 1.77738 12.1202C1.43584 14.024 1.52583 15.9812 2.04058 17.8448C2.55534 19.7084 3.48146 21.4298 4.74933 22.8796" stroke="#00274D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M25.3327 22.4L18.9993 16L12.666 22.4" stroke="#00274D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_406_4620">
+                            <rect width="38" height="32" fill="white"/>
+                            </clipPath>
+                            </defs>
+                        </svg>                    
+                        <span onclick="document.getElementById('consulting-image-input').click()">Upload Image</span>
+                        <div id="consulting-image-preview" class="hide image-preview"></div>
+                    </div>
+                 </div>
+                <!-- Course Description -->
+                <div class="input-wrappers">
+                    <label>Consulting Description</label>
+                    <textarea name="description" placeholder="Description..."></textarea>
+                </div>
+                <div class="error-div text-start w-100">
+                    <small class="input-error-msg"></small>
+                </div>
+                <!-- Buttons -->
+                <div class="buttons">
+                    <button type="button" class="cancel" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="save">
+                        <span class="spinner-border spinner-border-sm hide" role="status" aria-hidden="true"></span>
+                        <span class="btn-text text-white">Save</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+      </div>
+    </div>
+</div>
+<input type="hidden" class="addConsultingModal" data-bs-toggle="modal" data-bs-target="#addConsultingModal" />
+
+
+<!-- speaking modalll -->
+<div class="modal fade" id="addSpeakingModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="addSpeakingModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 fw-bold" id="staticBackdropLabel">Add Speaking</h1>
+          <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+        </div>
+        <div class="modal-body"> 
+            <form method="post" class="services-modal">
+                {% csrf_token %}
+                <div class="input-wrappers">
+                    <label>Speaking Title</label>
+                    <input type="text" name="title" placeholder="Enter speaking title">
+                </div>
+                <!-- Upload Image -->
+                 <div class="input-wrappers">
+                    <label>Speaking Image</label>
+                    <div class="upload-box" id="image-box">
+                        <input type="file" name="image" id="speaking-image-input" accept="image/*" hidden>
+                        <svg width="38" height="32" viewBox="0 0 38 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_406_4620)">
+                            <path d="M25.3327 22.4L18.9993 16M18.9993 16L12.666 22.4M18.9993 16V30.4" stroke="#00274D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M32.2835 26.2236C33.8278 25.3728 35.0477 24.0266 35.7508 22.3974C36.4539 20.7682 36.6 18.9488 36.1662 17.2263C35.7323 15.5038 34.7432 13.9764 33.3549 12.8851C31.9666 11.7938 30.2582 11.2008 28.4993 11.1996H26.5043C26.0251 9.32637 25.1318 7.58732 23.8917 6.11317C22.6517 4.63903 21.097 3.46814 19.3446 2.68856C17.5923 1.90897 15.6879 1.54096 13.7745 1.6122C11.8612 1.68343 9.98868 2.19206 8.29786 3.09985C6.60703 4.00763 5.14185 5.29095 4.01248 6.85331C2.8831 8.41568 2.11892 10.2164 1.77738 12.1202C1.43584 14.024 1.52583 15.9812 2.04058 17.8448C2.55534 19.7084 3.48146 21.4298 4.74933 22.8796" stroke="#00274D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M25.3327 22.4L18.9993 16L12.666 22.4" stroke="#00274D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_406_4620">
+                            <rect width="38" height="32" fill="white"/>
+                            </clipPath>
+                            </defs>
+                        </svg>                    
+                        <span onclick="document.getElementById('speaking-image-input').click()">Upload Image</span>
+                        <div id="speaking-image-preview" class="hide image-preview"></div>
+                    </div>
+                 </div>
+                <!-- Course Description -->
+                <div class="input-wrappers">
+                    <label>Speaking Description</label>
+                    <textarea name="description" placeholder="Description..."></textarea>
+                </div>
+                <div class="error-div text-start w-100">
+                    <small class="input-error-msg"></small>
+                </div>
+                <!-- Buttons -->
+                <div class="buttons">
+                    <button type="button" class="cancel" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="save">
+                        <span class="spinner-border spinner-border-sm hide" role="status" aria-hidden="true"></span>
+                        <span class="btn-text text-white">Save</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+      </div>
+    </div>
+</div>
+<input type="hidden" class="addSpeakingModal" data-bs-toggle="modal" data-bs-target="#addSpeakingModal" />
+
+
+<!-- faqs modal -->
+<div class="modal fade" id="addFAQModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="addFAQModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 fw-bold" id="staticBackdropLabel">Add FAQ</h1>
+          <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+        </div>
+        <div class="modal-body"> 
+            <form method="post" class="services-modal">
+                {% csrf_token %}
+                <div class="input-wrappers">
+                    <label>Question</label>
+                    <input type="text" name="question" placeholder="Enter FAQ title">
+                </div>
+                <!-- Course Description -->
+                <div class="input-wrappers">
+                    <label>Answer</label>
+                    <textarea name="answer" class="faq-textarea" placeholder="Description..."></textarea>
+                </div>
+                <div class="error-div text-start w-100">
+                    <small class="input-error-msg"></small>
+                </div>
+                <!-- Buttons -->
+                <div class="buttons">
+                    <button type="button" class="cancel" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="save">
+                        <span class="spinner-border spinner-border-sm hide" role="status" aria-hidden="true"></span>
+                        <span class="btn-text text-white">Save</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+      </div>
+    </div>
+</div>
+<input type="hidden" class="addFAQModal" data-bs-toggle="modal" data-bs-target="#addFAQModal" />
+
+<!-- Notifications modal -->
+
+
+<div class="modal fade" id="addNotificationsModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="addNotificationsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 fw-bold" id="staticBackdropLabel">Add Notification</h1>
+          <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+        </div>
+        <div class="modal-body"> 
+            <form method="post" class="services-modal">
+                {% csrf_token %}
+                <div class="input-wrappers">
+                    <label>Title</label>
+                    <input type="text" name="title" placeholder="Title">
+                </div>
+                <!-- Course Description -->
+                <div class="input-wrappers">
+                   <label>Description</label>
+                     <!-- <textarea name="description" placeholder="Description..."></textarea> -->
+                    <div id="toolbar" class="ql-toolbar ql-snow">
+                        <button class="ql-undo p-0" type="button">
+                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16.5 10.25H8.88438L11.1263 8.00875L10.25 7.125L6.5 10.875L10.25 14.625L11.1263 13.7406L8.88625 11.5H16.5C17.4946 11.5 18.4484 11.8951 19.1517 12.5983C19.8549 13.3016 20.25 14.2554 20.25 15.25C20.25 16.2446 19.8549 17.1984 19.1517 17.9017C18.4484 18.6049 17.4946 19 16.5 19H11.5V20.25H16.5C17.8261 20.25 19.0979 19.7232 20.0355 18.7855C20.9732 17.8479 21.5 16.5761 21.5 15.25C21.5 13.9239 20.9732 12.6521 20.0355 11.7145C19.0979 10.7768 17.8261 10.25 16.5 10.25Z" stroke="#444"/>
+                            </svg>                        
+                        </button>
+                        <button class="ql-redo p-0" type="button">
+                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.5 10.25H19.1156L16.8737 8.00875L17.75 7.125L21.5 10.875L17.75 14.625L16.8737 13.7406L19.1137 11.5H11.5C10.5054 11.5 9.55161 11.8951 8.84835 12.5983C8.14509 13.3016 7.75 14.2554 7.75 15.25C7.75 16.2446 8.14509 17.1984 8.84835 17.9017C9.55161 18.6049 10.5054 19 11.5 19H16.5V20.25H11.5C10.1739 20.25 8.90215 19.7232 7.96447 18.7855C7.02678 17.8479 6.5 16.5761 6.5 15.25C6.5 13.9239 7.02678 12.6521 7.96447 11.7145C8.90215 10.7768 10.1739 10.25 11.5 10.25Z" stroke="#444"/>
+                            </svg>                                                
+                        </button>
+                        <button class="ql-bold" type="button"><svg viewBox="0 0 18 18">
+                            <path class="ql-stroke" d="M5,4H9.5A2.5,2.5,0,0,1,12,6.5v0A2.5,2.5,0,0,1,9.5,9H5A0,0,0,0,1,5,9V4A0,0,0,0,1,5,4Z"></path> <path class="ql-stroke" d="M5,9h5.5A2.5,2.5,0,0,1,13,11.5v0A2.5,2.5,0,0,1,10.5,14H5a0,0,0,0,1,0,0V9A0,0,0,0,1,5,9Z"></path> </svg>
+                        </button>
+                        <button class="ql-italic" type="button"><svg viewBox="0 0 18 18"> <line class="ql-stroke" x1="7" x2="13" y1="4" y2="4"></line> <line class="ql-stroke" x1="5" x2="11" y1="14" y2="14"></line> <line class="ql-stroke" x1="8" x2="10" y1="14" y2="4"></line> </svg></button>
+                        <button class="ql-underline" type="button"><svg viewBox="0 0 18 18"> <path class="ql-stroke" d="M5,3V9a4.012,4.012,0,0,0,4,4H9a4.012,4.012,0,0,0,4-4V3"></path> <rect class="ql-fill" height="1" rx="0.5" ry="0.5" width="12" x="3" y="15"></rect> </svg></button>
+                        <button class="ql-strike" type="button"><svg viewBox="0 0 18 18"> <line class="ql-stroke ql-thin" x1="15.5" x2="2.5" y1="8.5" y2="9.5"></line> <path class="ql-fill" d="M9.007,8C6.542,7.791,6,7.519,6,6.5,6,5.792,7.283,5,9,5c1.571,0,2.765.679,2.969,1.309a1,1,0,0,0,1.9-.617C13.356,4.106,11.354,3,9,3,6.2,3,4,4.538,4,6.5a3.2,3.2,0,0,0,.5,1.843Z"></path> <path class="ql-fill" d="M8.984,10C11.457,10.208,12,10.479,12,11.5c0,0.708-1.283,1.5-3,1.5-1.571,0-2.765-.679-2.969-1.309a1,1,0,1,0-1.9.617C4.644,13.894,6.646,15,9,15c2.8,0,5-1.538,5-3.5a3.2,3.2,0,0,0-.5-1.843Z"></path> </svg></button>
+                        <button class="ql-list" value="ordered" type="button"><svg viewBox="0 0 18 18"> <line class="ql-stroke" x1="7" x2="15" y1="4" y2="4"></line> <line class="ql-stroke" x1="7" x2="15" y1="9" y2="9"></line> <line class="ql-stroke" x1="7" x2="15" y1="14" y2="14"></line> <line class="ql-stroke ql-thin" x1="2.5" x2="4.5" y1="5.5" y2="5.5"></line> <path class="ql-fill" d="M3.5,6A0.5,0.5,0,0,1,3,5.5V3.085l-0.276.138A0.5,0.5,0,0,1,2.053,3c-0.124-.247-0.023-0.324.224-0.447l1-.5A0.5,0.5,0,0,1,4,2.5v3A0.5,0.5,0,0,1,3.5,6Z"></path> <path class="ql-stroke ql-thin" d="M4.5,10.5h-2c0-.234,1.85-1.076,1.85-2.234A0.959,0.959,0,0,0,2.5,8.156"></path> <path class="ql-stroke ql-thin" d="M2.5,14.846a0.959,0.959,0,0,0,1.85-.109A0.7,0.7,0,0,0,3.75,14a0.688,0.688,0,0,0,.6-0.736,0.959,0.959,0,0,0-1.85-.109"></path> </svg></button>
+                        <button class="ql-list" value="bullet" type="button"><svg viewBox="0 0 18 18"> <line class="ql-stroke" x1="6" x2="15" y1="4" y2="4"></line> <line class="ql-stroke" x1="6" x2="15" y1="9" y2="9"></line> <line class="ql-stroke" x1="6" x2="15" y1="14" y2="14"></line> <line class="ql-stroke" x1="3" x2="3" y1="4" y2="4"></line> <line class="ql-stroke" x1="3" x2="3" y1="9" y2="9"></line> <line class="ql-stroke" x1="3" x2="3" y1="14" y2="14"></line> </svg></button>
+                        <button class="ql-blockquote" type="button">
+                            <svg viewBox="0 0 18 18"> <rect class="ql-fill ql-stroke" height="3" width="3" x="4" y="5"></rect> <rect class="ql-fill ql-stroke" height="3" width="3" x="11" y="5"></rect> <path class="ql-even ql-fill ql-stroke" d="M7,8c0,4.031-3,5-3,5"></path> <path class="ql-even ql-fill ql-stroke" d="M14,8c0,4.031-3,5-3,5"></path> </svg>
+                        </button>
+                    </div>               
+                    <div name="body" contenteditable="true" id="editor" class="editor">
+                    </div>
+                </div>
+                <!-- Upload File -->
+                <div class="input-wrappers">
+                    <label>Attachment</label>
+                    <label for="notification-file-input" class="upload-box" id="file-box">
+                        <input name="attachment" type="file" id="notification-file-input" hidden>
+                        <svg width="38" height="26" viewBox="0 0 38 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M26.6379 25.5143H29.5078C33.7233 25.5143 37.1411 22.1372 37.1411 17.972C37.1411 13.8068 33.7233 10.4297 29.5078 10.4297C28.4897 10.4297 27.5177 10.6276 26.6301 10.9844C26.5389 6.8981 23.1583 3.61328 19.0002 3.61328C14.8422 3.61328 11.4615 6.89921 11.3704 10.9844C10.4827 10.6276 9.51073 10.4297 8.49259 10.4297C4.27717 10.4297 0.859375 13.8068 0.859375 17.972C0.859375 22.1372 4.27717 25.5143 8.49259 25.5143H11.3625" fill="#D6E9FB" fill-opacity="0.69"/>
+                            <path d="M16.8586 16.8968V6.83277H12.8594L19.2099 0.484375L25.5583 6.83277H21.5612V16.8862" fill="#00274D"/>
+                        </svg>                    
+                        <span >Upload File</span>
+                        <span id="notification-file-name"></span>
+                    </label>
+                </div>
+                <small class="info hide">Please do not close this page, until the process is complete.</small>
+                <div class="error-div text-start w-100">
+                    <small class="input-error-msg"></small>
+                </div>
+                <!-- Buttons -->
+                <div class="buttons">
+                    <button type="button" class="cancel" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="save">
+                        <span class="spinner-border spinner-border-sm hide" role="status" aria-hidden="true"></span>
+                        <span class="btn-text text-white">Send</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+      </div>
+    </div>
+</div>
+<input type="hidden" class="addNotificationsModal" data-bs-toggle="modal" data-bs-target="#addNotificationsModal" />
+
+
+<!-- Add Video Modal -->
+<div class="modal fade" id="addHomePageContentModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="addHomePageContentModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5 fw-bold" id="staticBackdropLabel">Add Video</h1>
+            </div>
+            <div class="modal-body"> 
+                <form method="post" class="services-modal" id="videoUploadForm">
+                    {% csrf_token %}
+                    <div class="input-wrappers">
+                        <label>Title</label>
+                        <input type="text" name="title" id="videoTitle" placeholder="Enter video title" required>
+                    </div>
+                    <!-- Video Upload -->
+                    <div class="input-wrappers">
+                        <label>Video File (Max 100MB)</label>
+                        <label for="video-file-input" class="upload-box" id="video-upload-box">
+                            <input type="file" name="video_file" id="video-file-input" accept="video/*" hidden required>
+                            <svg width="38" height="26" viewBox="0 0 38 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M26.6379 25.5143H29.5078C33.7233 25.5143 37.1411 22.1372 37.1411 17.972C37.1411 13.8068 33.7233 10.4297 29.5078 10.4297C28.4897 10.4297 27.5177 10.6276 26.6301 10.9844C26.5389 6.8981 23.1583 3.61328 19.0002 3.61328C14.8422 3.61328 11.4615 6.89921 11.3704 10.9844C10.4827 10.6276 9.51073 10.4297 8.49259 10.4297C4.27717 10.4297 0.859375 13.8068 0.859375 17.972C0.859375 22.1372 4.27717 25.5143 8.49259 25.5143H11.3625" fill="#D6E9FB" fill-opacity="0.69"/>
+                                <path d="M16.8586 16.8968V6.83277H12.8594L19.2099 0.484375L25.5583 6.83277H21.5612V16.8862" fill="#00274D"/>
+                            </svg>                    
+                            <span id="action-btn">Upload Video</span>
+                            <span id="video-file-name" class="file-name"></span>
+                        </label>
+                        <div class="video-preview mt-2" id="video-preview"></div>
+                    </div>
+                    <div class="form-check mb-3 w-100">
+                        <input class="form-check-input" type="checkbox" name="is_active" id="makeActive">
+                        <label class="form-check-label" for="makeActive">
+                            Set as active video
+                        </label>
+                    </div>
+                    <div class="error-div text-start w-100">
+                        <small class="input-error-msg"></small>
+                    </div>
+                    <!-- Buttons -->
+                    <div class="buttons">
+                        <button type="button" class="cancel" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="save">
+                            <span class="spinner-border spinner-border-sm hide" role="status" aria-hidden="true"></span>
+                            <span class="btn-text text-white">Save</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<input type="hidden" class="addHomePageContentModal" data-bs-toggle="modal" data-bs-target="#addHomePageContentModal" />

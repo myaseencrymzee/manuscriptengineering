@@ -1,0 +1,115 @@
+
+#LogoutModal .modal-content {
+    padding: 14px;
+    width: 500px;
+    height: unset !important;
+    border-radius: 20px;
+    /* width: fit-content; */
+}
+
+#LogoutModal .modal-header {
+    border-bottom: unset;
+}
+
+#LogoutModal .modal-header.forgot-password {
+    padding-bottom: unset;
+}
+
+#LogoutModal .sub-header {
+    width: 100%;
+}
+
+#LogoutModal .sub-header > p {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 33px;
+    margin: unset;
+    color: #7c7c7c;
+}
+
+#LogoutModal .modal-title {
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px;
+}
+
+#LogoutModal .modal-body {
+    display: flex;
+    justify-content: center;
+}
+
+#LogoutModal .main-body-content > .message {
+    width: 350px;
+    text-align: center;
+    /* font-family: Lato; */
+    font-weight: 500;
+    line-height: 26px;
+}
+
+#LogoutModal .modal-footer {
+    border-top: unset;
+    justify-content: center;
+    margin-top: unset !important;
+}
+
+#LogoutModal .modal-footer .main-footer-content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row !important;
+    gap: 10px;
+}
+
+#LogoutModal .modal-footer .main-footer-content button:first-child{
+    width: 175px;
+    background-color: #ffffff;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 9px !important;
+}
+
+#LogoutModal .modal-footer .main-footer-content > button.submit {
+    width: 175px;
+    padding: 10px !important;
+    border: none !important;
+    border-radius: 8px !important;
+    color: #ffffff !important;
+    background-color: var(--primary-color) !important;
+  }
+  #LogoutModal .modal-footer .main-footer-content > button .btn-text{
+    color: #ffffff !important;
+}
+  
+
+@media (min-width: 992px) {
+    .modal-lg, .modal-xl {
+        --bs-modal-width: unset;
+    }
+}
+
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: min-content !important;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+@media screen and (max-width: 450px) {
+
+    #LogoutModal .modal-content {
+        padding: 14px;
+        width: 342px
+    }
+    #LogoutModal .main-body-content > .message {
+        width: 297px;
+    }
+    .modal-dialog-centered{
+        justify-content: center !important;
+    }
+    
+}

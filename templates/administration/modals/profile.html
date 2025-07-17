@@ -1,0 +1,87 @@
+{% load static %}
+<div class="modal fade" id="profileModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 fw-bold" id="staticBackdropLabel">Update Profile</h1>
+        </div>
+        <div class="modal-body"> 
+            <form method="post" class="services-modal" id="profileUpdateForm">
+                {% csrf_token %}
+                <!-- Upload Image -->
+                <div class="input-wrappers profile-image">
+                    <label for="profile-image" class="cursor-pointer">
+                        <img class="profile_image" src="{% static "user/images/auther-img.jpg" %}" alt="">
+                        <input type="file" id="profile-image" name="profile_picture" class="hide">
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="28" height="28" rx="5" fill="#00274D"/>
+                            <path d="M20.0095 12.2131L11.0864 21.1384C10.6075 21.6174 10.009 21.9575 9.35158 22.1218L5.92929 22.9769C5.38263 23.114 4.88784 22.6192 5.02232 22.07L5.87745 18.6478C6.0418 17.9905 6.38104 17.3903 6.8609 16.9131L15.7839 7.98867L20.0094 12.214L20.0095 12.2131ZM22.124 5.87596C23.292 7.04391 23.292 8.9361 22.124 10.1013L21.0667 11.1567L16.8412 6.93142L17.8985 5.87596C19.0665 4.70801 20.9588 4.70801 22.124 5.87596Z" fill="white"/>
+                        </svg>                            
+                    </label>
+                </div>
+                <div class="input-wrappers">
+                    <label>Name</label>
+                    <input type="text" name="full_name" placeholder="Enter course title">
+                </div>
+                <div class="input-wrappers">
+                    <label>Email</label>
+                    <input type="text" name="email" placeholder="Enter course title">
+                </div>
+                <div class="input-wrappers">
+                    <label for="password">Password</label>
+                    <div class="w-100 password-input-div">
+                        <input type="password" name="password" data-type="password" id="password" placeholder="******" >
+                        <svg onclick="togglePasswordField(event, this);" class="show-hide-icon hide-password-icon cursor-pointer" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_388_851)">
+                            <path d="M10.465 10.4652C9.46782 11.2252 8.25363 11.6463 6.99998 11.6668C2.91665 11.6668 0.583313 7.00016 0.583313 7.00016C1.30892 5.64794 2.31531 4.46652 3.53498 3.53516M5.77498 2.4735C6.17651 2.37951 6.5876 2.33253 6.99998 2.3335C11.0833 2.3335 13.4166 7.00016 13.4166 7.00016C13.0626 7.6626 12.6403 8.28626 12.1566 8.861M8.23665 8.23683C8.07644 8.40877 7.88323 8.54667 7.66857 8.64232C7.4539 8.73797 7.22217 8.7894 6.9872 8.79354C6.75223 8.79769 6.51882 8.75447 6.30092 8.66645C6.08301 8.57843 5.88507 8.44743 5.71889 8.28125C5.55271 8.11508 5.42171 7.91713 5.33369 7.69922C5.24568 7.48132 5.20245 7.24792 5.2066 7.01294C5.21075 6.77797 5.26218 6.54624 5.35782 6.33157C5.45347 6.11691 5.59138 5.92371 5.76331 5.7635M0.583313 0.583496L13.4166 13.4168" stroke="#00274D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_388_851">
+                            <rect width="14" height="14" fill="white"/>
+                            </clipPath>
+                            </defs>
+                        </svg>
+                        <svg onclick="togglePasswordField(event, this);" class="show-hide-icon show-password-icon hide cursor-pointer" width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="7.41501" cy="7.2764" r="2.15111" stroke="#00274D" stroke-width="1.4"/>
+                            <path d="M13.0017 6.2223C13.3962 6.67583 13.5935 6.9026 13.5935 7.27667C13.5935 7.65073 13.3962 7.8775 13.0017 8.33103C11.9002 9.59739 9.81099 11.5533 7.415 11.5533C5.01901 11.5533 2.92982 9.59739 1.82827 8.33103C1.43377 7.8775 1.23652 7.65073 1.23652 7.27667C1.23652 6.9026 1.43377 6.67583 1.82827 6.2223C2.92982 4.95594 5.01901 3 7.415 3C9.81099 3 11.9002 4.95594 13.0017 6.2223Z" stroke="#00274D" stroke-width="1.7"/>
+                        </svg>                              
+                    </div>                                
+                </div>
+                <div class="input-wrappers">
+                    <label for="confirm_password">Password</label>
+                    <div class="w-100 password-input-div">
+                        <input type="password" name="confirm_password" data-type="password" id="confirm_password"  placeholder="******" >
+                        <svg onclick="togglePasswordField(event, this);" class="show-hide-icon hide-password-icon cursor-pointer" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_388_851)">
+                            <path d="M10.465 10.4652C9.46782 11.2252 8.25363 11.6463 6.99998 11.6668C2.91665 11.6668 0.583313 7.00016 0.583313 7.00016C1.30892 5.64794 2.31531 4.46652 3.53498 3.53516M5.77498 2.4735C6.17651 2.37951 6.5876 2.33253 6.99998 2.3335C11.0833 2.3335 13.4166 7.00016 13.4166 7.00016C13.0626 7.6626 12.6403 8.28626 12.1566 8.861M8.23665 8.23683C8.07644 8.40877 7.88323 8.54667 7.66857 8.64232C7.4539 8.73797 7.22217 8.7894 6.9872 8.79354C6.75223 8.79769 6.51882 8.75447 6.30092 8.66645C6.08301 8.57843 5.88507 8.44743 5.71889 8.28125C5.55271 8.11508 5.42171 7.91713 5.33369 7.69922C5.24568 7.48132 5.20245 7.24792 5.2066 7.01294C5.21075 6.77797 5.26218 6.54624 5.35782 6.33157C5.45347 6.11691 5.59138 5.92371 5.76331 5.7635M0.583313 0.583496L13.4166 13.4168" stroke="#00274D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_388_851">
+                            <rect width="14" height="14" fill="white"/>
+                            </clipPath>
+                            </defs>
+                        </svg>
+                        <svg onclick="togglePasswordField(event, this);" class="show-hide-icon show-password-icon hide cursor-pointer" width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="7.41501" cy="7.2764" r="2.15111" stroke="#00274D" stroke-width="1.4"/>
+                            <path d="M13.0017 6.2223C13.3962 6.67583 13.5935 6.9026 13.5935 7.27667C13.5935 7.65073 13.3962 7.8775 13.0017 8.33103C11.9002 9.59739 9.81099 11.5533 7.415 11.5533C5.01901 11.5533 2.92982 9.59739 1.82827 8.33103C1.43377 7.8775 1.23652 7.65073 1.23652 7.27667C1.23652 6.9026 1.43377 6.67583 1.82827 6.2223C2.92982 4.95594 5.01901 3 7.415 3C9.81099 3 11.9002 4.95594 13.0017 6.2223Z" stroke="#00274D" stroke-width="1.7"/>
+                        </svg>                              
+                    </div>                                
+                </div>
+                <div class="error-div text-start w-100">
+                    <small class="input-error-msg"></small>
+                </div>
+                <!-- Buttons -->
+                <div class="buttons">
+                    <button type="button" class="cancel" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="save">
+                        <span class="spinner-border spinner-border-sm hide" role="status" aria-hidden="true"></span>
+                        <span class="btn-text text-white">Save</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+      </div>
+    </div>
+</div>
+<input type="hidden" class="profileModal" data-bs-toggle="modal" data-bs-target="#profileModal" />
+

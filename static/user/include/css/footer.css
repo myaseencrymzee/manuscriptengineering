@@ -1,0 +1,109 @@
+footer {
+    background-color: var(--primary-color) !important;
+}
+
+.wrapper>* {
+    flex: 0 0 auto;
+}
+
+a {
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.py-8 {
+    padding-top: 3.5rem !important;
+    padding-bottom: 2.5rem !important;
+}
+
+.py-8>.container-fluid {
+    padding-left: 3.64%;
+    padding-right: 3.64%;
+}
+
+.footer-link-01 li+li {
+    padding-top: 0.8rem;
+}
+
+.footer-title-01 {
+    font-size: 16px;
+    margin: 0 0 20px;
+    font-weight: 600;
+}
+
+.footer-title-01 {
+    font-size: 16px;
+    margin: 0 0 20px;
+    font-weight: 600
+}
+
+.footer-link-01 li+li {
+    padding-top: .8rem
+}
+
+.footer-subscribe-btn span{
+    color: #FFFFFF;
+}
+
+.udummy-course-link {
+    color: #FFFFFF;
+    font-weight: 600 !important;
+    text-decoration: none;
+}
+
+
+@media (max-width: 991.98px) {
+    .footer-link-01 li+li {
+        padding-top: .6rem
+    }
+}
+
+.footer-link-01 a {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 14px;
+    font-weight: 300;
+    width: fit-content;
+}
+
+.footer-link-01 a:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: auto;
+    right: 0;
+    width: 0;
+    height: 1px;
+    transition: ease all .35s;
+    background: currentColor
+}
+
+.footer-link-01 a:hover:after {
+    left: 0;
+    right: auto;
+    width: 100%
+}
+
+.first-row span {
+    color: #FFFFFF;
+    font-size: 14px;
+    line-height: 25px;
+
+}
+
+.first-row {
+    margin-top: 10px;
+}
+
+.line-hight {
+    line-height: 18px;
+}
+
+
+@media screen and (max-width: 500px) {
+
+    .handle-margin {
+        margin-top: 20px;
+    }
+}

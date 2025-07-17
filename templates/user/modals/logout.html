@@ -1,0 +1,36 @@
+<div class="modal fade logout-modal" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header justify-content-between">
+            <svg class="visibility-hidden" data-bs-dismiss="modal" aria-label="Close" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="22" height="22" rx="14" fill="#FF0D0D"/>
+                <path d="M8.4 21L7 19.6L12.6 14L7 8.4L8.4 7L14 12.6L19.6 7L21 8.4L15.4 14L21 19.6L19.6 21L14 15.4L8.4 21Z" fill="white"/>
+            </svg>
+            <svg id="staticBackdropLabel" width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20.1933 38.0067C21.1167 33.26 25.56 30 30.3933 30H43.3333C45.1733 30 46.6667 28.5067 46.6667 26.6667V16.6667C46.6667 12.9833 43.6833 10 40 10H16.6667C12.9833 10 10 12.9833 10 16.6667V63.3333C10 67.0167 12.9833 70 16.6667 70H40C43.6833 70 46.6667 67.0167 46.6667 63.3333V53.3333C46.6667 51.4933 45.1733 50 43.3333 50H30C23.8333 50 18.9533 44.39 20.1933 38.0067Z" fill="#84AFDA"/>
+                <path d="M69.0193 37.6435L59.0193 27.6435C57.716 26.3402 55.6094 26.3402 54.306 27.6435C53.0027 28.9468 53.0027 31.0535 54.306 32.3568L58.6127 36.6668H29.9993C28.1593 36.6668 26.666 38.1602 26.666 40.0002C26.666 41.8402 28.1593 43.3335 29.9993 43.3335H58.6127L54.3027 47.6435C52.9994 48.9468 52.9994 51.0535 54.3027 52.3568C54.956 53.0068 55.8094 53.3335 56.6627 53.3335C57.516 53.3335 58.3693 53.0068 59.0193 52.3568L69.0193 42.3568C70.3193 41.0535 70.3193 38.9468 69.0193 37.6435Z" fill="#00274D"/>
+            </svg>                
+            <svg data-bs-dismiss="modal" aria-label="Close" width="22" height="22" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="28" height="28" rx="14" fill="#FF0D0D"/>
+                <path d="M8.4 21L7 19.6L12.6 14L7 8.4L8.4 7L14 12.6L19.6 7L21 8.4L15.4 14L21 19.6L19.6 21L14 15.4L8.4 21Z" fill="white"/>
+            </svg>
+        </div>
+        <form class="modal-body " method="post" id="logoutForm" onsubmit="logoutForm(event, '{{request.user.role}}');">
+            {% csrf_token %}
+          <h5>Logout Account</h5>
+          <span>Are you sure you want to log out? You’ll need to sign in again to access your account.</span>
+          <div class="error-div">
+            <small class="input-error-msg"></small>
+          </div>
+          <button type="submit" data-type="logout">
+            <span class="spinner-border spinner-border-sm hide" role="status" aria-hidden="true"></span>
+            <span class="btn-text" data-i18n="logout-modal-ok-button">Logout</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- nahi ho ga -->
