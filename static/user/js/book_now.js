@@ -92,10 +92,10 @@ async function bookNowForm(event) {
     try {
         error_message.innerHTML = "";
         error_message.classList.remove("active");
-        grecaptcha.ready(function() {
-            grecaptcha.execute(RECAPTCHA_SITE_KEY, {action: 'submit'}).then(async function(token) {
+        // grecaptcha.ready(function() {
+        //     grecaptcha.execute(RECAPTCHA_SITE_KEY, {action: 'submit'}).then(async function(token) {
+                // data.recaptcha_token = token
                 beforeLoad(button);
-                data.recaptcha_token = token
                 let response = await fetch("/api/book-session/", {
                     method: "POST",
                     headers: {
@@ -150,8 +150,8 @@ async function bookNowForm(event) {
                 
                 }
                 form.reset();
-            });
-          });
+        //     });
+        //   });
        
 
     } catch (error) {

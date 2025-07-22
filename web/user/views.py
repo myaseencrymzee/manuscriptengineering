@@ -14,7 +14,7 @@ class HomeTemplateView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['active_nav'] = "home"
-        context['RECAPTCHA_SITE_KEY'] = settings.RECAPTCHA_SITE_KEY
+        # context['RECAPTCHA_SITE_KEY'] = settings.RECAPTCHA_SITE_KEY
         
         # context['subscribed_topics'] = []
         # if self.request.user.is_authenticated:

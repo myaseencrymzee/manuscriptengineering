@@ -172,10 +172,10 @@ async function keepInTouchForm(event) {
 
     try {
         // Sending Contact Form API request
-        grecaptcha.ready(function() {
-            grecaptcha.execute(RECAPTCHA_SITE_KEY, {action: 'submit'}).then(async function(token) {
+        // grecaptcha.ready(function() {
+        //     grecaptcha.execute(RECAPTCHA_SITE_KEY, {action: 'submit'}).then(async function(token) {
+                // data.recaptcha_token = token
                 beforeLoad(button);
-                data.recaptcha_token = token
                 let contactResponse = await fetch("/api/contact/", {
                     method: "POST",
                     headers: {
@@ -230,8 +230,8 @@ async function keepInTouchForm(event) {
                     
                 }
 
-            });
-          });
+        //     });
+        //   });
         
     form.reset();
 

@@ -271,17 +271,17 @@ class ContactFormSerializer(serializers.Serializer):
     email = serializers.EmailField()
     phone_number = serializers.CharField(max_length=15, required=False, allow_blank=True)
     message = serializers.CharField()
-    recaptcha_token = serializers.CharField(write_only=True)
+    # recaptcha_token = serializers.CharField(write_only=True)
 
-    def validate_recaptcha_token(self, token):
-        """
-        Validate reCAPTCHA token using the common verification function.
-        """
-        success, score = verify_recaptcha(token)
-        if not success or score < 0.5:  # Adjust the score threshold if necessary
-            raise serializers.ValidationError("reCAPTCHA validation failed. Please try again.")
+    # def validate_recaptcha_token(self, token):
+    #     """
+    #     Validate reCAPTCHA token using the common verification function.
+    #     """
+    #     success, score = verify_recaptcha(token)
+    #     if not success or score < 0.5:  # Adjust the score threshold if necessary
+    #         raise serializers.ValidationError("reCAPTCHA validation failed. Please try again.")
 
-        return token
+    #     return token
 
 
 class authorSerializer(serializers.ModelSerializer):
@@ -300,17 +300,17 @@ class BookingSerializer(serializers.Serializer):
     session = serializers.ChoiceField(choices=["Coaching", "Consulting", "Speaking", "Other"])
     message = serializers.CharField()
     subscribe = serializers.BooleanField(default=False)
-    recaptcha_token = serializers.CharField(write_only=True)
+    # recaptcha_token = serializers.CharField(write_only=True)
 
-    def validate_recaptcha_token(self, token):
-        """
-        Validate reCAPTCHA token using the common verification function.
-        """
-        success, score = verify_recaptcha(token)
-        if not success or score < 0.5:  # Adjust the score threshold if necessary
-            raise serializers.ValidationError("reCAPTCHA validation failed. Please try again.")
+    # def validate_recaptcha_token(self, token):
+    #     """
+    #     Validate reCAPTCHA token using the common verification function.
+    #     """
+    #     success, score = verify_recaptcha(token)
+    #     if not success or score < 0.5:  # Adjust the score threshold if necessary
+    #         raise serializers.ValidationError("reCAPTCHA validation failed. Please try again.")
 
-        return token
+    #     return token
 
 
 class SignupSerializer(serializers.ModelSerializer):
