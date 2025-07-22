@@ -24,7 +24,7 @@
      </div>
      <div id="coaching-content" class="tab-content active">
         {% if request.user.is_authenticated %}
-        <div class="justify-content-between pdfs">
+        <div class="justify-content-between pdfs" id="resources-list">
                     {% for file in course_files %}
                     <div class="">
                         <div class="pdf-container" style="background-image: url('{{file.image.url}}');">
@@ -151,6 +151,6 @@
 {% endblock content %}
 
 {% block js %}
-<!-- <script src="{% static 'user/js/all-resources.js'%}"></script> -->
+<script src="{% static 'user/js/all-resources.js'%}"></script>
 
 {% endblock js %}
