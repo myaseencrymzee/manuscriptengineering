@@ -8,7 +8,8 @@ async function getResources() {
         data.resources.forEach(file => {
             const wrapper = document.createElement('div');
             wrapper.className = 'pdf-container';
-            wrapper.style.backgroundImage = `url('/static/images/pdf-bg.png')`; // replace with actual image if needed
+            let cleanedUrl = file.image.startsWith('/') ? file.image.substring(1) : file.image;
+            wrapper.style.backgroundImage = `url('${CONTENT_API_URL}${cleanedUrl}')`; // replace with actual image if needed
 
             const overlay = document.createElement('div');
             overlay.className = 'overlay';
