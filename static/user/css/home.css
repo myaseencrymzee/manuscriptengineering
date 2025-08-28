@@ -154,6 +154,10 @@ body {
     /* gap: 50px; */
 }
 
+.about-book > div {
+    padding: 0px 60px;
+}
+
 .w-35 {
     width: 35%;
 }
