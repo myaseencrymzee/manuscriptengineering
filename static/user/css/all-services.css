@@ -586,3 +586,48 @@
         font-size: 10px !important;
     }
 }
+
+
+
+.manuscript-all-contant  .hero {
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.manuscript-all-contant  .services {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 40px 20px;
+}
+
+.manuscript-all-contant  .service-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.manuscript-all-contant  .service-card h2 {
+  margin-top: 0;
+  color: var(--primary-color);
+  font-size: 26px;
+  text-align: left;
+}
+.service-card h4 {
+    font-size: 18px;
+    font-weight: 600;
+}
+.manuscript-all-contant  .service-card ul {
+  padding-left: 20px;
+}
+
+.manuscript-all-contant  .outcome {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #555;
+}

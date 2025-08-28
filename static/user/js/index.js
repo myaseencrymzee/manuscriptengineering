@@ -264,9 +264,9 @@ async function dailyUpdateForm(event) {
 // window.addEventListener('load', getServicesData('speaking'));
 // window.addEventListener('load', getServicesData('courses'));
 
-let faqUrl = `${CONTENT_API_URL}api/faqs?perPage=1000`
+// let faqUrl = `${CONTENT_API_URL}api/faqs?perPage=1000`
 let blogs_endpoint = `${CONTENT_API_URL}api/blog?perPage=1000&status=published`;
-window.addEventListener('load', getFaqData(faqUrl));
+// window.addEventListener('load', getFaqData(faqUrl));
 window.addEventListener('load', get_blogs(blogs_endpoint));
 
 
@@ -327,19 +327,19 @@ window.addEventListener('load', get_blogs(blogs_endpoint));
 
 
 
-async function getFaqData(faqUrl) {
-  try {
-      let response = await requestAPI(faqUrl, null, {}, 'GET');
-      let res = await response.json();      
-      if(response.status == 200) {
-          renderFaqsData(res)
-          initializeFaqFunctionality()
-      } 
-  }
-  catch(err) {
-      console.log(err);   
-  }
-}
+// async function getFaqData(faqUrl) {
+//   try {
+//       let response = await requestAPI(faqUrl, null, {}, 'GET');
+//       let res = await response.json();      
+//       if(response.status == 200) {
+//           renderFaqsData(res)
+//           initializeFaqFunctionality()
+//       } 
+//   }
+//   catch(err) {
+//       console.log(err);   
+//   }
+// }
 
 function renderFaqsData(res) {
   let faqContainer = document.getElementById('faqContainer')
@@ -372,7 +372,7 @@ function renderFaqsData(res) {
         let noFaq = document.querySelector('.no-faq')
         faqWrapper.classList.add('hide')
         noFaq.classList.remove('hide')
-      }
+    }
   
 }
 
@@ -466,6 +466,9 @@ function initializeFaqFunctionality() {
   
   handleResize(); // Initial setup
 }
+
+window.addEventListener("load", initializeFaqFunctionality);
+
 
 async function get_blogs(endpoint){
     try {
