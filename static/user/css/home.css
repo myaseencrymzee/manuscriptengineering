@@ -215,7 +215,7 @@ body {
 
 .article .action-btns a {
     width: 100%;
-    max-width: 210px;
+    max-width: 250px;
     height: 45px;
     border-radius: 6px;
     background-color: var(--primary-color);
@@ -268,9 +268,7 @@ body {
     color: var(--primary-text-color);
 }
 .about-book > div > img{
-    height: 450px;
     border-radius: 20px;
-    object-fit: cover;
 }
 
 .about-me-img-container img {
