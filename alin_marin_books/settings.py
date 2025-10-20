@@ -64,7 +64,8 @@ INSTALLED_APPS = [
     'api.notification',
     'api.subsriber_popup',
     'api.bounced_emails',
-    'api.home_page_content'
+    'api.home_page_content',
+    'api.payment',
 ]
 
 MIDDLEWARE = [
@@ -243,3 +244,16 @@ CONTENT_API_URL=os.environ.get("CONTENT_API_URL")
 # INSTALLED_APPS += ['corsheaders']
 # MIDDLEWARE = ['corsheaders.middleware.CorsMiddleware'] + MIDDLEWARE
 CORS_ALLOW_ALL_ORIGINS = True 
+
+
+PAYPAL_CLIENT_ID = os.getenv("PAYPAL_CLIENT_ID")
+PAYPAL_SECRET = os.getenv("PAYPAL_SECRET")
+PAYPAL_MODE = os.getenv("PAYPAL_MODE", "sandbox")
+PAYPAL_BASE_URL = os.getenv("PAYPAL_BASE_URL", "https://api-m.sandbox.paypal.com")
+CLIENT_ID = os.getenv("PAYPAL_CLIENT_ID")
+CLIENT_SECRET = os.getenv("PAYPAL_SECRET")
+
+STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY")
+STRIPE_PUBLISHABLE_KEY = os.getenv("STRIPE_PUBLISHABLE_KEY")
+STRIPE_WEBHOOK_SECRET = os.getenv("STRIPE_WEBHOOK_SECRET")
+PAYPAL_PDF = os.getenv("PAYPAL_PDF", "Time-management.pdf")

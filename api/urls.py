@@ -1,6 +1,7 @@
 from django.urls import path
 from rest_framework.routers import DefaultRouter
 
+from api.payment.views import CaptureOrderAPIView, CreateOrderAPIView, CreateStripeSessionAPIView, GetStripeTokenAPIView, PayPalWebhookAPIView, StripeSuccessAPIView, StripeWebhookAPIView, StripeWebhookAPIView, download_pdf
 from api.subscribers.views import SubscribeUserView, SubscriberListView
 from api.bounced_emails.views import MailgunWebhookView
 from .user.views import *
@@ -52,6 +53,17 @@ urlpatterns = [
 
     path('webhooks/calendly/', calendly_webhook, name='calendly_webhook'),
     path("bounced-emails/webhook/", MailgunWebhookView.as_view(), name="mailgun-webhook"),
+
+    path("create-order/", CreateOrderAPIView.as_view(), name="create-order"),
+    path("capture-order/", CaptureOrderAPIView.as_view(), name="capture-order"),
+    path("download/<str:token>/", download_pdf, name="download-pdf"),
+    # path("download/", download_pdf, name="download-pdf"),
+    path("paypal/webhook/", PayPalWebhookAPIView.as_view(), name="paypal-webhook"),
+
+    path("create-stripe-session/", CreateStripeSessionAPIView.as_view(), name="create-stripe-session"),
+    path("stripe/webhook/", StripeWebhookAPIView.as_view(), name="stripe-webhook"),
+    path("stripe/success/", StripeSuccessAPIView.as_view(), name="stripe-success"),
+    path("get-stripe-token/", GetStripeTokenAPIView.as_view(), name="get-stripe-token"),
 
 ] + router.urls
 

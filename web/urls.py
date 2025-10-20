@@ -25,6 +25,7 @@ urlpatterns = [
     path('user-profile-management/', UserProfileManagementTemplateView.as_view(), name="user-profile-management"),
     path("unsubscribe/<int:subscriber_id>/", UnsubscribeTemplateView.as_view(), name="unsubscribe-user"),
     path("course/<int:id>/videos/", CourseVideosTemplateView.as_view(), name="course-videos"),
+    path('payment-success/', SuccessTemplateView.as_view(), name="payment-success"),
     
 
 

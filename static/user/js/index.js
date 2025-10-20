@@ -714,3 +714,75 @@ function renderVideos(video) {
     `;
     container.appendChild(videoCard);
 }
+
+
+document.getElementById("buyNowBtn").addEventListener("click", function() {
+  fetch("/api/create-order/", {
+    method: "POST",
+    headers: {"X-CSRFToken": getCookie("csrftoken")}
+  })
+  .then(res => res.json())
+  .then(data => {
+    console.log(data);
+    if (data.approve_url) {
+        closeCurrentModal();
+      window.open(data.approve_url, "_blank"); // open PayPal in new tab
+    } else {
+      alert("Error starting checkout.");
+    }
+  });
+});
+
+
+document.getElementById("buyNowStripeBtn").addEventListener("click", function() {
+  fetch("/api/create-stripe-session/", {
+    method: "POST",
+    credentials: 'same-origin',
+    headers: {
+      'X-CSRFToken': getCookie('csrftoken'),
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({})
+  }).then(res => res.json()).then(data => {
+    if (data.checkout_url) {
+        closeCurrentModal();
+      window.open(data.checkout_url, "_blank"); // opens hosted Stripe Checkout in new tab
+    } else {
+      alert("Error initiating Stripe checkout");
+    }
+  }).catch(err => {
+    console.error(err);
+    alert("Stripe error");
+  });
+});
+
+
+function detectAndShowPaymentModal() {
+    // Helper to check if the page was reloaded
+    function isPageReload() {
+      try {
+        const navEntries = performance.getEntriesByType && performance.getEntriesByType("navigation");
+        if (navEntries && navEntries.length) {
+          return navEntries[0].type === "reload";
+        }
+        if (performance.navigation) {
+          return performance.navigation.type === performance.navigation.TYPE_RELOAD;
+        }
+      } catch (e) {}
+      return false;
+    }
+
+    // If this is NOT a reload, and URL has ?action=buy, open the modal
+    const urlParams = new URLSearchParams(window.location.search);
+    const action = urlParams.get("action");
+
+    if (action === "buy" && !isPageReload()) {
+      const modalEl = document.getElementById("pdfPurchaseModal");
+      if (modalEl) {
+        const modal = new bootstrap.Modal(modalEl);
+        modal.show();
+      }
+    }
+};
+
+document.addEventListener("DOMContentLoaded", detectAndShowPaymentModal);

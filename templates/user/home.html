@@ -2,6 +2,7 @@
 {% load static %}
 {% block css %}
 <link rel="stylesheet" href="{% static 'user/css/home.css' %}">
+<link rel="stylesheet" href="{% static 'user/modals/css/payment-modal.css' %}">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/libphonenumber-js@1.10.0/bundle/libphonenumber-js.min.js"></script>
@@ -44,7 +45,8 @@
                 <div class="imp-actions">
                     <div class="action-btns">
                         <a href="/other-resources/" type="button">Download Free Chapter</a>
-                        <a href="/all-services/" type="button">Work With Alin</a>
+                        <!-- <a href="/all-services/" type="button">Work With Alin</a> -->
+                         <a href="javascript:void(0)" type="button" data-bs-toggle="modal" data-bs-target="#pdfPurchaseModal">Buy Now</a>
                     </div>
                     <div class="pages-chap-ratings d-flex">
                         <div class="pages d-flex">
@@ -914,9 +916,16 @@
 
 
 {{RECAPTCHA_SITE_KEY|json_script:"RECAPTCHA_SITE_KEY"}}
+{{PAYPAL_CLIENT_ID|json_script:"PAYPAL_CLIENT_ID"}}
+{{STRIPE_PUBLISHABLE_KEY|json_script:"STRIPE_PUBLISHABLE_KEY"}}
+
+{% include "user/modals/payment-modal.html" %}
+
+
 {% endblock content %}
 
 {% block js %}
+<script src="https://www.paypal.com/sdk/js?client-id={{PAYPAL_CLIENT_ID}}&currency=USD"></script>
 <script src="{% static 'user/js/index.js' %}"></script>
 <script src="{% static 'user/js/keep_in_touch.js' %}"></script>
 {% endblock js %}

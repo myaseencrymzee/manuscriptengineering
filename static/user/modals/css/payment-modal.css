@@ -1,0 +1,143 @@
+.demo-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.modal-content {
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.modal-header {
+    border-bottom: unset;
+    padding: 15px 20px 0px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-title {
+    font-weight: 600;
+    font-size: 1.25rem;
+    text-align: center;
+    width: 100%;
+}
+
+.btn-close {
+    position: absolute;
+    right: 20px;
+    top: 65%;
+    transform: translateY(-50%);
+    font-size: 0.75rem;
+}
+
+.payment-option {
+    border: 1px solid #e5e5e5;
+    border-radius: 6px;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: all 0.2s;
+    background-color: white;
+}
+
+.payment-option:hover {
+    border-color: #007bff;
+}
+
+.payment-option.active {
+    border-color: #007bff;
+    background-color: #f0f8ff;
+}
+
+.payment-label {
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+.payment-description {
+    font-size: 0.875rem;
+    color: #6c757d;
+    margin-bottom: 0;
+}
+
+.divider {
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+}
+
+.divider::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: #e5e5e5;
+}
+
+.divider-text {
+    display: inline-block;
+    background-color: white;
+    padding: 0 10px;
+    color: #6c757d;
+    font-size: 0.875rem;
+}
+
+.btn-pay {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    border: 1px solid #007bff;
+    background-color: #007bff;
+    color: white;
+    transition: all 0.2s;
+}
+
+.btn-pay:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.btn-pay-paypal {
+    background-color: #ffc439;
+    border-color: #ffc439;
+    color: #000;
+}
+
+.btn-pay-paypal:hover {
+    background-color: #f2b600;
+    border-color: #f2b600;
+}
+
+.btn-trigger {
+    background-color: #007bff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    color: white;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.btn-trigger:hover {
+    background-color: #0056b3;
+}
+
+.instruction {
+    margin-top: 30px;
+    color: #6c757d;
+    font-size: 0.9rem;
+}

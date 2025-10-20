@@ -14,6 +14,8 @@ class HomeTemplateView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['active_nav'] = "home"
+        context['PAYPAL_CLIENT_ID'] = settings.PAYPAL_CLIENT_ID
+        context['STRIPE_PUBLISHABLE_KEY'] = settings.STRIPE_PUBLISHABLE_KEY
         # context['RECAPTCHA_SITE_KEY'] = settings.RECAPTCHA_SITE_KEY
         
         # context['subscribed_topics'] = []
@@ -161,3 +163,11 @@ class UnsubscribeTemplateView(TemplateView):
             print(e)
         # return JsonResponse({"message": "Successfully unsubscribed"})
         return context
+
+class SuccessTemplateView(TemplateView):
+    template_name = 'user/importantPages/payment-success.html'
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['token'] = self.request.GET.get('token', '')
+        return context 
