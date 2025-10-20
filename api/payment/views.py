@@ -59,7 +59,7 @@ class CreateOrderAPIView(APIView):
                     "amount": {"currency_code": CURRENCY, "value": str(FIXED_AMOUNT)}
                 }],
                 "application_context": {
-                    "brand_name": "Construction Site",
+                    "brand_name": "Manuscript Site",
                     "landing_page": "LOGIN",          # or NO_PREFERENCE
                     "user_action": "PAY_NOW",
                     "shipping_preference": "NO_SHIPPING",
