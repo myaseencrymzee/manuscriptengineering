@@ -33,7 +33,7 @@ function renderServicesData(responseData) {
                   <h4>${data.title}</h4>
                   <span>${data.description}</span>
                   <div class="book-now-coaching-btns">
-                      <button onclick="location.pathname = '/book-now/'">Book Now</button>
+                      <button onclick="location.pathname = '/book-now/'">Enroll</button>
                       <div class="img-container hide">
                           <img src="/static/web/images/userimg1.jpg" alt="" style="position: relative; right: -60px;">
                           <img src="/static/web/images/userimg2.jpg" alt="" style="position: relative; right: -40px;">

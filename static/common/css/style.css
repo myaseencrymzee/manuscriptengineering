@@ -269,3 +269,8 @@ input::-webkit-inner-spin-button {
     border-radius: 8px;
     margin-top: 20px;
 }
+
+.inactive-class {
+    cursor: not-allowed;
+    opacity: .5;
+}
