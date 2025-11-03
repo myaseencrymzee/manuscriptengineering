@@ -93,7 +93,7 @@ window.addEventListener('load', getServicesData('course'));
 
 async function getServicesData(type) {
     try {
-        let response = await requestAPI(`${CONTENT_API_URL}api/${type}`, null, {}, 'GET');
+        let response = await requestAPI(`${CONTENT_API_URL}api/${type}?publish_sites=manuscript`, null, {}, 'GET');
         let res = await response.json();
         if(response.status == 200) {
             renderServicesData(res, type)
