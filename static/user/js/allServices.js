@@ -125,7 +125,8 @@ function renderServicesData(responseData, type) {
               <div class="main-coaching-content">
                   <h4>${data.title}</h4>
                   <span>${data.description}</span>
-                  ${ type == "course"? `<a href="/course/${data.id}/videos/">Course Videos</a>` : ""}
+                    ${type == "course" && data?.is_url_active ? `<a href="${data.course_url}" target="_blank">Course Link</a>` : ''}
+                    ${ type == "course" && data?.is_url_active == false ? `<a href="/course/${data.id}/videos/">Course Videos</a>` : ""}
                   
                   <div class="book-now-coaching-btns">
                       <button ${type == "courses" ? `onclick="location.pathname='/contact-us/'"` : `onclick="Calendly.initPopupWidget({url: 'https://calendly.com/alinyear2002/${type}'}`}); return false;">${type == 'courses'? 'Enroll Now' : 'Enroll'}</button>
