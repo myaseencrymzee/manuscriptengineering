@@ -6,10 +6,12 @@ from api.service.models import Coaching, Consulting, Course, Speaking
 from api.subscribers.models import Subscriber
 from web.mixins import UserLoginRequiredMixin
 from django.conf import settings
+from api.core.meta import CMSMetaContextMixin
 # Create your views here.
 
-class HomeTemplateView(TemplateView):
+class HomeTemplateView(CMSMetaContextMixin, TemplateView):
     template_name = 'user/home.html'
+    page_key = 'home'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -33,8 +35,9 @@ class BookNowTemplateView(TemplateView):
 
         return context
 
-class ContactusTemplateView(TemplateView):
-    template_name = 'user/contact-us.html'  
+class ContactusTemplateView(CMSMetaContextMixin, TemplateView):
+    template_name = 'user/contact-us.html'
+    page_key = "contact"  
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -43,8 +46,9 @@ class ContactusTemplateView(TemplateView):
         return context  
 
 
-class ResourcesTemplateView(TemplateView):
+class ResourcesTemplateView(CMSMetaContextMixin, TemplateView):
     template_name = 'user/resources.html'
+    page_key = 'resources'
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -65,17 +69,18 @@ class ServicesTemplateView(TemplateView):
         return context  
     
 
-class AllServicesTemplateView(TemplateView):
+class AllServicesTemplateView(CMSMetaContextMixin, TemplateView):
     template_name = 'user/all-services.html'  
-
+    page_key = "my_services" 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['active_nav'] = "services"
         return context 
     
 
-class BlogsTemplateView(TemplateView):
+class BlogsTemplateView(CMSMetaContextMixin, TemplateView):
     template_name = 'user/blogs.html'  
+    page_key = 'blog'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -83,8 +88,9 @@ class BlogsTemplateView(TemplateView):
         return context 
     
 
-class OtherResourcesTemplateView(UserLoginRequiredMixin, TemplateView):
+class OtherResourcesTemplateView(CMSMetaContextMixin, UserLoginRequiredMixin, TemplateView):
     template_name = 'user/other-resources.html'
+    page_key = 'resources'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

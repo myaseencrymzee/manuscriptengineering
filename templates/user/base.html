@@ -17,11 +17,10 @@
     <link rel="stylesheet" href="{% static 'user/css/logout.css' %}">
     <link rel="stylesheet" href="{% static 'user/modals/css/subscription-modal.css' %}">
     <link rel="shortcut icon" href="{% static 'user/images/logo.svg'%}" type="image/x-icon">
-    {% for name, content in meta_tags.items %}
-        <meta name="{{ name }}" content="{{ content }}">
-    {% endfor %}
+    <meta name="description" content="{% block meta_description %}{{ meta_description|default:'Default site description' }}{% endblock %}">
+    <meta name="keywords" content="{% block meta_keywords %}{{ meta_keywords|default:'' }}{% endblock %}">
     {% block css %}{% endblock css %}
-    <title> {% block title %}{% endblock title %} | Alin Marin Books</title>
+    <title>{% block meta_title %}{{ meta_title|default:"Alin Marin Books" }}{% endblock %}</title>
 </head>
 <body>
     {% include "user/include/navbar.html"%}
@@ -38,7 +37,7 @@
     </script>
     {% else %}
     <script>
-        const shouldShowSubscribeModal = true;
+        // const shouldShowSubscribeModal = true;
     </script>
     {% endif %}
 
